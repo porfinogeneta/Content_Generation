@@ -81,4 +81,4 @@ def generate_image(prompt: str, test=False) -> str:
        raise Exception("Unable to generate")
       
 
-print(generate_image(prompt="Small dog on the beach"))
+# print(generate_image(prompt="Small dog on the beach"))

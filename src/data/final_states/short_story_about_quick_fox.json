@@ -1,0 +1,34 @@
+{
+  "topic": "Short story about quick fox",
+  "test": false,
+  "story": {
+    "title": "The Swift Shadow of Emberwood Forest",
+    "text": "Flicker was not just any fox; he was a blur of russet and white, a whisper of motion through the ancient Emberwood Forest. His paws, light as falling leaves, barely disturbed the mossy ground as he weaved between gnarled roots and towering ferns.",
+    "tldr": "Flicker, a super-fast fox, outwits Farmer McGregor's dog, Barnaby, with his incredible speed and agility while trying to hunt a mouse near a vegetable patch."
+  },
+  "image_prompts": [
+    {
+      "text": "Flicker was not just any fox; he was a blur of russet and white, a whisper of motion through the ancient Emberwood Forest. His paws, light as falling leaves, barely disturbed the mossy ground as he weaved between gnarled roots and towering ferns.",
+      "img_prompt": "A russet and white fox, Flicker, a blur of motion, gracefully weaving through an ancient, mossy Emberwood Forest with towering ferns and gnarled roots, sunlight dappling through the trees."
+    },
+    {
+      "text": "He saw the mouse, a tiny, unsuspecting bundle of grey, nibbling on a fallen berry. Flicker crouched, muscles coiled like springs, his amber eyes fixed on his prey.",
+      "img_prompt": "A russet fox, Flicker, crouched low in a vegetable patch, muscles coiled, amber eyes intently focused on a tiny grey field mouse nibbling a berry, with green plants in the background."
+    },
+    {
+      "text": "Flicker was not just any fox; he was a blur of russet and white, a whisper of motion through the ancient Emberwood Forest. His paws, light as falling leaves, barely disturbed the mossy ground as he weaved between gnarled roots and towering ferns.",
+      "img_prompt": "A russet and white fox, Flicker, a blur of motion, gracefully weaving through an ancient, mossy Emberwood Forest with towering ferns and gnarled roots, sunlight dappling through the trees."
+    },
+    {
+      "text": "He saw the mouse, a tiny, unsuspecting bundle of grey, nibbling on a fallen berry. Flicker crouched, muscles coiled like springs, his amber eyes fixed on his prey.",
+      "img_prompt": "A russet fox, Flicker, crouched low in a vegetable patch, muscles coiled, amber eyes intently focused on a tiny grey field mouse nibbling a berry, with green plants in the background."
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/zebra/bN_TC5n4qfCQZqoKAb5By.jpg",
+    "https://v3b.fal.media/files/b/penguin/npflUw26gjinB9sVPjQ83.jpg",
+    "https://v3b.fal.media/files/b/zebra/bN_TC5n4qfCQZqoKAb5By.jpg",
+    "https://v3b.fal.media/files/b/penguin/npflUw26gjinB9sVPjQ83.jpg"
+  ],
+  "audio_link": "/Users/szymon/Documents/projekciki/Content_Generation/src/data/audio/short_story_about_quick_fox/fox.wav"
+}

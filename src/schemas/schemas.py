@@ -1,4 +1,8 @@
 from pydantic import BaseModel
+from typing import List
+from pathlib import Path
+
+
 
 # STORY
 class StoryGenerationOutput(BaseModel):
@@ -14,3 +18,12 @@ class ImagesPromptsOutput(BaseModel):
 
 
 # AUDIO
+
+# GRAPH STATE
+class GraphState(BaseModel):
+    topic: str
+    test: bool
+    story: StoryGenerationOutput | None
+    image_prompts: List [ImagesPromptsOutput] | None
+    photo_links: List[str] | None
+    audio_link: Path | None
