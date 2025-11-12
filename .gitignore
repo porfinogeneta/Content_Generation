@@ -214,3 +214,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# google services
+credentials.json
+token.json
+
+.DS_Store
