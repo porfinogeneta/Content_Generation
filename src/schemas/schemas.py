@@ -22,6 +22,7 @@ class ImagesPromptsOutput(BaseModel):
 # GRAPH STATE
 class GraphState(BaseModel):
     topic: str
+    story_slug: str
     test: bool
     story: StoryGenerationOutput | None
     image_prompts: List [ImagesPromptsOutput] | None

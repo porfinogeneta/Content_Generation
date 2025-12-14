@@ -78,19 +78,20 @@ def generate_images_node(state: GraphState) -> dict:
 def generate_audio_node(state: GraphState) -> dict:
     print("---NODE: Generating Audio---")
     text_to_read = state.story.text
-    title = state.topic.replace(" ", "_").lower()
-    audio_path = generate_audio(text_to_read=text_to_read,
-                    title=title,
-                    speed_factor=2.0,
+    audio_link = generate_audio(text_to_read=text_to_read,
                     test=state.test 
                    )
-    return {"audio_link": audio_path}
+    return {"audio_link": audio_link}
 
 
 
 
 if __name__ == "__main__":
 
+    """
+        Workflow generates data on the api provider side and returns a final
+        state with created media
+    """
     workflow = StateGraph(GraphState)
 
     workflow.add_node("generate_story", generate_story_node)
@@ -104,6 +105,7 @@ if __name__ == "__main__":
     workflow.add_edge("generate_image_prompts", "generate_images")
     workflow.add_edge("generate_images", "generate_audio")
     workflow.add_edge("generate_audio", END)
+
 
     # TODO:
     # - this mechanism of storing in the memory could be used to run the graph after exception from some specific node
@@ -121,8 +123,12 @@ if __name__ == "__main__":
         }
     }
 
+    TITLE = "Short story about quick fox"
+    STORY_SLUG = TITLE.lower().replace(" ", "_")
+
     workflow_initial_state = {
         "topic": "Short story about quick fox",
+        "story_slug": STORY_SLUG,
         "test": False,
         "story": None,
         "image_prompts": None,
@@ -147,8 +153,8 @@ if __name__ == "__main__":
 
     final_state_pydantic = GraphState(**final_state)
 
-    ROOT_DATA = Path(__file__).resolve().parent / "data"
-    STATE_OUTPUT_FOLDER = ROOT_DATA / "final_states"
+    ROOT_DATA = Path(__file__).resolve().parent / "data" / "final_states" 
+    STATE_OUTPUT_FOLDER = ROOT_DATA / STORY_SLUG
     STATE_OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
 
     file_name = Path(initial_state.topic.replace(" ", "_").lower())

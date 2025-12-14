@@ -1,0 +1,35 @@
+{
+  "topic": "Short story about quick fox",
+  "story_slug": "short_story_about_quick_fox",
+  "test": false,
+  "story": {
+    "title": "The Swift Shadow of Emberwood Forest",
+    "text": "Flicker was not just any fox; he was a blur of russet and white, a whisper of motion through the ancient Emberwood Forest. His paws, light as falling leaves, barely disturbed the mossy ground as he weaved between gnarled roots and towering ferns. Today, the scent of a plump field mouse had drawn him to the edge of Farmer McGregor's sprawling vegetable patch, a place usually fraught with danger. But Flicker was hungry, and his speed was his shield. He saw the mouse, a tiny, unsuspecting bundle of grey, nibbling on a fallen berry. Flicker crouched, muscles coiled like springs, his amber eyes fixed on his prey. A sudden rustle in the undergrowth – a dog! Old Barnaby, the farmer's grumpy hound, had caught his scent. Most foxes would freeze, or bolt in a straight line, but Flicker was different. In a flash, he didn't just run; he danced. He feinted left, then darted right, a zigzagging streak that left Barnaby barking at empty air. He leaped over a low fence, slid under a blackberry bush, and then, with a final burst of incredible acceleration, vanished into the deep woods, the mouse long forgotten in the thrill of the escape. Barnaby, panting and confused, could only watch the spot where the swift shadow had disappeared. Flicker, safe among the trees, let out a satisfied huff. Another day, another testament to his unmatched speed.",
+    "tldr": "Flicker, a super-fast fox, outwits Farmer McGregor's dog, Barnaby, with his incredible speed and agility while trying to hunt a mouse near a vegetable patch."
+  },
+  "image_prompts": [
+    {
+      "text": "Flicker was not just any fox; he was a blur of russet and white, a whisper of motion through the ancient Emberwood Forest. His paws, light as falling leaves, barely disturbed the mossy ground as he weaved between gnarled roots and towering ferns. Today, the scent of a plump field mouse had drawn him to the edge of Farmer McGregor's sprawling vegetable patch, a place usually fraught with danger. But Flicker was hungry, and his speed was his shield.",
+      "img_prompt": "A russet and white fox, Flicker, a blur of motion, gracefully weaving through an ancient, mossy Emberwood Forest with towering ferns and gnarled roots, sunlight dappling through the trees."
+    },
+    {
+      "text": "He saw the mouse, a tiny, unsuspecting bundle of grey, nibbling on a fallen berry. Flicker crouched, muscles coiled like springs, his amber eyes fixed on his prey.",
+      "img_prompt": "A russet fox, Flicker, crouched low in a vegetable patch, muscles coiled, amber eyes intently focused on a tiny grey field mouse nibbling a berry, with green plants in the background."
+    },
+    {
+      "text": "A sudden rustle in the undergrowth – a dog! Old Barnaby, the farmer's grumpy hound, had caught his scent. Most foxes would freeze, or bolt in a straight line, but Flicker was different. In a flash, he didn't just run; he danced. He feinted left, then darted right, a zigzagging streak that left Barnaby barking at empty air.",
+      "img_prompt": "A grumpy, large hound dog, Barnaby, barking loudly at the empty air, confused, as a russet fox, Flicker, appears as a zigzagging blur of motion, feinting left and right, escaping through undergrowth near a vegetable patch."
+    },
+    {
+      "text": "He leaped over a low fence, slid under a blackberry bush, and then, with a final burst of incredible acceleration, vanished into the deep woods, the mouse long forgotten in the thrill of the escape. Barnaby, panting and confused, could only watch the spot where the swift shadow had disappeared. Flicker, safe among the trees, let out a satisfied huff. Another day, another testament to his unmatched speed.",
+      "img_prompt": "A russet fox, Flicker, vanishing into the deep woods with incredible speed, leaping over a low fence and sliding under a blackberry bush, leaving a panting, confused hound dog, Barnaby, watching the empty spot."
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/0a864fce/cidJmqX88gpK6-KpOeg8L.jpg",
+    "https://v3b.fal.media/files/b/0a864fce/hruhCSdLmM2aWX_OgCzlA.jpg",
+    "https://v3b.fal.media/files/b/0a864fce/daYYeuqhrUjYiZftxe79b.jpg",
+    "https://v3b.fal.media/files/b/0a864fce/XxKt8Z1LonJ_RqayrxxBE.jpg"
+  ],
+  "audio_link": "https:/v3b.fal.media/files/b/0a864fd5/rxfLi4d3vAiqeRShmPLNZ_tmpjz0pdtvu.wav"
+}
