@@ -19,35 +19,61 @@ import os
 
 ROOT_SRC = Path(__file__).resolve().parent.parent
 INPUT_DATA_PATH = ROOT_SRC / "data" / "final_states"
-BASE_OUTPUT_PATH = ROOT_SRC / "data" / "videos"
-FONT_PATH = ROOT_SRC / "data" / "subtitles" / "fonts"
-OUTPUT_SRT_PATH = ROOT_SRC / "data" / "subtitles" / "srt"
+DATA_PATH = ROOT_SRC / "data"
+
+
+# class EditorConfig:
+#     """
+#         Holds editor config values
+#     """
+#     DATA_PATH = 
+    
 
 # editing videos using MoviePy
 class Editor:
+
     def __init__(self, 
                 title: str,
                 story_slug: str,
                 scenes: List[str],
-                audio: str,
+                audio_url: str,
                 playback_speed: float,
-                images: List[str],
-                font_path:str = FONT_PATH / Path("TikTokSans_28pt-Medium.ttf"),
-                srt_path: str = OUTPUT_SRT_PATH / Path("test.srt")):
+                image_urls: List[str],
+                ):
         
         self.title = title
         self.story_slug = story_slug
         self.scenes = scenes
-        self.audio = audio
-        self.playback_speed = 2.0
-        self.images = images
+        self.audio_url = audio_url
+        self.playback_speed = playback_speed
+        self.image_urls = image_urls
         self.video_size = (1080, 1920)
         self.zoom_factor = 0.30
-        self.font_path = font_path
-        self.srt_path = srt_path
+        
+        # output directories
+        self.audio_dir = DATA_PATH / self.story_slug / "audio"
+        self.audio_dir.mkdir(parents=True, exist_ok=True)
+
+        self.imgs_dir = DATA_PATH / self.story_slug / "images"
+        self.imgs_dir.mkdir(parents=True, exist_ok=True)
+
+        self.videos_dir = DATA_PATH / self.story_slug / "video"
+        self.videos_dir.mkdir(parents=True, exist_ok=True)
+
+        self.srt_path = DATA_PATH / self.story_slug / Path(f"{self.story_slug}_subtitles")
+        self.srt_path.mkdir(parents=True, exist_ok=True)
+
+        # has to be predefined earlier
+        self.font_path =  DATA_PATH / "fonts" / Path("TikTokSans_28pt-Medium.ttf")
+        # self.font_path = "/Users/szymon/Documents/projekciki/Content_Generation/src/data/fonts/TikTokSans_28pt-Medium.ttf"
+        
     
     # fetches remotely stored data, returns path to local file
     def fetch_data(self, url: str, destination: Path, suffix: str, index: int) -> Path:
+
+        if url.startswith("https:/") and not url.startswith("https://"):
+            url = url.replace("https:/", "https://", 1)
+
         try:
 
             # exisitng path
@@ -69,21 +95,21 @@ class Editor:
             return final_path
         
         except requests.exceptions.RequestException as e:
-            print(f"Error downloading image {url}: {e}")
-            raise Exception("unable to download")
+            print(f"Error downloading {url}: {e}")
+            raise Exception(e)
 
-    def transcribe(self):
+    def transcribe(self, audio_path: Path):
         model = WhisperModel("small")
-        segments, info = model.transcribe(self.audio, word_timestamps=True)
+        segments, info = model.transcribe(audio_path, word_timestamps=True)
         return info.language, segments
     
-    def generate_subtitles(self, subtitles_chunk_size: int):
+    def generate_subtitles(self, audio_path: Path, subtitles_chunk_size: int):
         """
             Returns a list of tuples containing list of words, alongside timestamps:
             [(start1, end1, word1), (start2, end2, word2)]
         """
         complete_timestamp_and_words: List[Tuple[float, float, str]] = []
-        lang, segments = self.transcribe()
+        lang, segments = self.transcribe(audio_path)
         for segment in segments:
             segment_timestamp_words: List[Tuple[float, float, str]] = []
             # each segment contains Word(start=np.float64(7.76), end=np.float64(7.88), word=' Today', probability=np.float64(0.9799808859825134))
@@ -93,7 +119,7 @@ class Editor:
                 segment_timestamp_words.append((word.start, word.end, word.word))
 
                 if len(segment_timestamp_words) >= subtitles_chunk_size:
-                    print(segment_timestamp_words)
+                    # print(segment_timestamp_words)
                     # concat current segment
                     # extract words, start and end is the start of the first word and end of the last word
                     start = segment_timestamp_words[0][0]
@@ -125,7 +151,10 @@ class Editor:
         return formatted_time
     
     def create_srt_file(self, segment_timestamp_words: List[Tuple[float, float, str]]):
-        with open(self.srt_path, "w") as file:
+
+        final_output_file = self.srt_path / Path("subtitles.srt")
+
+        with open(final_output_file, "w") as file:
             text = ""
             for index, (start, end, subtitle) in enumerate(segment_timestamp_words):
                 text += f"{str(index+1)} \n"
@@ -135,33 +164,43 @@ class Editor:
             text = text.strip()
             file.write(text)
 
+        return final_output_file
+
     
 
-    def fetch_audio(self):
+    def fetch_audio(self) -> Path:
         """
             Fetches audio file and speeds it up
         """
-        tmp = tempfile.NamedTemporaryFile(suffix="wav", delete=False)
+
+        
+
+        final_output_path = self.audio_dir / "final_audio.wav"
+
+        tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
         temp_path = Path(tmp.name)
 
         # allow fetch data to open
         tmp.close()
         try:
 
-            downloaded_path = self.fetch_data(url=self.audio, destination=temp_path, suffix=".wav", index=0)
+            self.fetch_data(url=self.audio_url, destination=temp_path, suffix=".wav", index=0)
 
-            # put file pointer at the beginning
-            temp_file.seek(0)
+            # # put file pointer at the beginning
+            # tmp.seek(0)
 
             # speed up and return wav
-            y, sr = sf.read(temp_file)
+            y, sr = sf.read(temp_path)
             
             # Play back at 1.5X speed
-            y_stretch = pyrb.time_stretch(y, sr, speed_factor)
+            y_stretch = pyrb.time_stretch(y, sr, self.playback_speed)
             # Play back two 1.5x tones
             # y_shift = pyrb.pitch_shift(y, sr, 1.5)
 
-            sf.write(output_path, y_stretch, sr, format='wav')
+            sf.write(final_output_path, y_stretch, sr, format='wav')
+
+            return final_output_path
+        
         finally:
             # because we didn't delete temp file (delete=False)
             if os.path.exists(temp_path):
@@ -179,14 +218,14 @@ class Editor:
         """
         # concurrently fetch images
         MAX_WORKERS = 5
-        PATH = ROOT_SRC / Path("data") / Path(self.story_slug) / Path("images")
+        
         image_files = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             # mapping future objects to index
             future_to_index = {
                 # resubmission probably should be on the generate_image side
-                executor.submit(self.fetch_data, url=url, path=PATH, suffix=".jpg", index=i): i 
-                for i, url in enumerate(self.images)
+                executor.submit(self.fetch_data, url=url, destination=self.imgs_dir, suffix=".jpg", index=i): i 
+                for i, url in enumerate(self.image_urls)
             }
 
         for future in concurrent.futures.as_completed(future_to_index):
@@ -204,7 +243,7 @@ class Editor:
         return image_files
             
 
-    async def create_video(self):
+    def create_video(self):
 
         
         # TODO: maybe rewriting it to async would be better, but too much work lol, 
@@ -214,13 +253,12 @@ class Editor:
             future_images = executor.submit(self.fetch_images)
             future_audio = executor.submit(self.fetch_audio)
 
-            # wait for resources
-            images = future_images.result()
-            audio = future_audio.result()
+            # wait for resources, returns path to resources
+            image_files = future_images.result()
+            audio_file = future_audio.result()
 
 
-
-        audio_clip = AudioFileClip(audio)
+        audio_clip = AudioFileClip(audio_file)
 
         audio_duration = audio_clip.duration
 
@@ -231,6 +269,7 @@ class Editor:
         # get ratio of sentence length to total_length
         ratios = [e / total_length for e in images_texts_length]
         time_per_images = [audio_duration * ratio for ratio in ratios]
+        print(time_per_images)
 
         # ADD TRANSITIONS AND ANIMATIONS
         animated_clips = []
@@ -271,42 +310,55 @@ class Editor:
             video = CompositeVideoClip(final_clips)
         else:
             raise Exception("movie should contain images")
+        
 
-        # ADD SUBTITLES
-        timestamp_with_subtitles = self.generate_subtitles(subtitles_chunk_size=2)
-        self.create_srt_file(timestamp_with_subtitles)
+        timestamp_with_subtitles = self.generate_subtitles(audio_path=audio_file, subtitles_chunk_size=2)
+        srt_file = self.create_srt_file(timestamp_with_subtitles)
+
+        # This prevents the text from being centered in a full-screen box
+        text_box_height = 400 
 
         generator = lambda text: TextClip(
                                         font=self.font_path,
-                                        text=text, 
+                                        text=text,
                                         color='white',
                                         text_align='center',
                                         font_size=100,
                                         stroke_color='black',
+                                        # stroke_width=4,
                                         method='caption',
-                                        size=(video.w - 100, video.h),
+                                        size=(video.w - 100, text_box_height), 
                                         )
-        
+
         subtitles_clip = SubtitlesClip(
-            self.srt_path,
+            srt_file,
             make_textclip=generator, 
             encoding='utf-8'
-        ).with_position(('center', self.video_size[1] - self.video_size[1]/3)) 
-        
+        )
+
+        # Ensure subtitles last as long as the video
+        subtitles_clip = subtitles_clip.with_duration(video.duration)
+
+        # Position: 'center' horizontally, and bottom 20% vertically
+        # We subtract the text_box_height to ensure it doesn't bleed off the bottom
+        position_y = self.video_size[1] - text_box_height - 50 
+        subtitles_clip = subtitles_clip.with_position(('center', position_y))
+
         video = CompositeVideoClip([video, subtitles_clip])
 
         # ADD AUDIO
         video = video.with_audio(audio_clip)
 
         # save video
-        video.write_videofile(BASE_OUTPUT_PATH / Path(f"{self.title}.mp4"), fps=24)
+        final_output_path = self.videos_dir / Path(f"{self.story_slug}.mp4")
+        video.write_videofile(final_output_path, fps=24)
 
 
 
 if __name__ == "__main__":
 
-    title_ = "short_story_about_quick_fox.json"
-    INPUT_DICT_PATH = INPUT_DATA_PATH / title_
+    title_ = "short_story_about_quick_fox"
+    INPUT_DICT_PATH = INPUT_DATA_PATH / title_ / Path(f"{title_}.json")
     movie_data = None
 
     try:
@@ -314,10 +366,15 @@ if __name__ == "__main__":
             movie_data = json.load(json_file)
     except:
         raise Exception("file")
+    
+    TITLE = movie_data.get("title", None)
+    STORY_SLUG = movie_data.get("story_slug", None)
 
-    editor = Editor(title="hello",
+    editor = Editor(title=TITLE,
+                    story_slug=STORY_SLUG,
+                    playback_speed=3.0,
                     scenes=movie_data["image_prompts"],
-                    audio=movie_data["audio_link"],
-                    images=movie_data["photo_links"])
+                    audio_url=movie_data["audio_link"],
+                    image_urls=movie_data["photo_links"])
     
     editor.create_video()
