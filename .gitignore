@@ -219,3 +219,4 @@ credentials.json
 token.json
 
 .DS_Store
+client_secret_*

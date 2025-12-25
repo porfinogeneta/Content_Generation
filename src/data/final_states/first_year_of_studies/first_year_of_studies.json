@@ -1,0 +1,45 @@
+{
+  "topic": "First year of studies",
+  "story_slug": "first_year_of_studies",
+  "test": false,
+  "story": {
+    "title": "Survived my first year of university, and wow, what a ride!",
+    "text": "Okay, so I just finished my first year of university, and I honestly don't know whether to laugh, cry, or just sleep for a week straight. Coming in, I was a mix of terrified and incredibly excited. New city, new people, no parents telling me to clean my room – pure freedom, right? Well, not exactly.\n\nThe first semester was a blur of trying to figure out where my classes were, deciphering syllabi that looked like ancient texts, and attempting to cook anything beyond instant noodles. My roommate, bless her heart, was a night owl who studied with a headlamp, while I was a morning person. We eventually found a rhythm, mostly involving me wearing earplugs and her tiptoeing around at 3 AM.\n\nAcademically, it was a huge adjustment. High school felt like a walk in the park compared to the sheer volume of reading and the depth of critical thinking required. I remember one particular essay for my Intro to Philosophy class. I spent literally three days in the library, fueled by questionable coffee and sheer panic, only to get a 'C'. It felt like a punch to the gut, but it also taught me that effort doesn't always equal immediate success, and sometimes you just need to ask for help (which I eventually did, from a very patient TA).\n\nSocially, it was a rollercoaster. I joined a few clubs, went to countless awkward 'mixer' events, and slowly but surely, found my people. There were nights out that ended with us laughing until our sides hurt, and quiet evenings spent studying together in the common room. I learned that it's okay if not everyone likes you, and that true friends are the ones who show up with snacks when you're having a meltdown over an exam.\n\nThe biggest lesson? Independence is a double-edged sword. It's amazing to make your own choices, but it also means you're responsible for the consequences. I learned to budget (sort of), to do my own laundry (mostly), and to advocate for myself. There were moments of intense homesickness, moments of doubt, and moments where I seriously considered dropping out and becoming a professional cat cuddler.\n\nBut I made it. I passed my classes, made some incredible friends, and grew more than I ever thought possible in just nine months. I'm still figuring things out, but I'm heading into second year feeling a little more confident, a lot more tired, and incredibly grateful for the experience. To all the incoming first-years: buckle up, it's wild, but you got this!",
+    "tldr": "My first year of university was a chaotic but transformative experience, filled with academic struggles, social adjustments, learning independence, and ultimately, personal growth and new friendships."
+  },
+  "image_prompts": [
+    {
+      "text": "Okay, so I just finished my first year of university, and I honestly don't know whether to laugh, cry, or just sleep for a week straight. Coming in, I was a mix of terrified and incredibly excited. New city, new people, no parents telling me to clean my room – pure freedom, right? Well, not exactly.",
+      "img_prompt": "A young student, looking a mix of terrified and excited, standing in front of a bustling university campus with new buildings and diverse students. The sun is shining, symbolizing new beginnings."
+    },
+    {
+      "text": "The first semester was a blur of trying to figure out where my classes were, deciphering syllabi that looked like ancient texts, and attempting to cook anything beyond instant noodles. My roommate, bless her heart, was a night owl who studied with a headlamp, while I was a morning person. We eventually found a rhythm, mostly involving me wearing earplugs and her tiptoeing around at 3 AM.",
+      "img_prompt": "A split image showing two sides of a dorm room. On one side, a student with a headlamp is studying late at night, surrounded by books. On the other side, another student is trying to sleep with earplugs, with a messy desk in the background. A stack of instant noodle cups is visible."
+    },
+    {
+      "text": "Academically, it was a huge adjustment. High school felt like a walk in the park compared to the sheer volume of reading and the depth of critical thinking required. I remember one particular essay for my Intro to Philosophy class. I spent literally three days in the library, fueled by questionable coffee and sheer panic, only to get a 'C'. It felt like a punch to the gut, but it also taught me that effort doesn't always equal immediate success, and sometimes you just need to ask for help (which I eventually did, from a very patient TA).",
+      "img_prompt": "A student looking exhausted and stressed, surrounded by towering stacks of books and empty coffee cups in a dimly lit university library. A 'C' grade is visible on a paper in front of them, with a look of disappointment on their face."
+    },
+    {
+      "text": "Socially, it was a rollercoaster. I joined a few clubs, went to countless awkward 'mixer' events, and slowly but surely, found my people. There were nights out that ended with us laughing until our sides hurt, and quiet evenings spent studying together in the common room. I learned that it's okay if not everyone likes you, and that true friends are the ones who show up with snacks when you're having a meltdown over an exam.",
+      "img_prompt": "A collage of social scenes: a group of diverse students laughing together at a party, another group studying intently in a cozy common room, and a friend offering snacks to a stressed student during an exam meltdown."
+    },
+    {
+      "text": "The biggest lesson? Independence is a double-edged sword. It's amazing to make your own choices, but it also means you're responsible for the consequences. I learned to budget (sort of), to do my own laundry (mostly), and to advocate for myself. There were moments of intense homesickness, moments of doubt, and moments where I seriously considered dropping out and becoming a professional cat cuddler.",
+      "img_prompt": "A student looking thoughtful, surrounded by symbols of independence and responsibility: a budget spreadsheet, a laundry basket overflowing with clothes, and a small, cute cat. A faint shadow of homesickness is in the background."
+    },
+    {
+      "text": "But I made it. I passed my classes, made some incredible friends, and grew more than I ever thought possible in just nine months. I'm still figuring things out, but I'm heading into second year feeling a little more confident, a lot more tired, and incredibly grateful for the experience. To all the incoming first-years: buckle up, it's wild, but you got this!",
+      "img_prompt": "A confident yet slightly tired student smiling, walking towards a bright future on a university campus. They are surrounded by friends, and the sun is setting, casting a warm glow, symbolizing accomplishment and hope for the next year."
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/0a87bce8/1Z_HLIHtVuUmo_H6xE_RC.jpg",
+    "https://v3b.fal.media/files/b/0a87bce8/L6O6IAvMp0qZ8ZoyeEq-9.jpg",
+    "https://v3b.fal.media/files/b/0a87bce8/rcb1kNgBcPLoMKmjwHLBk.jpg",
+    "https://v3b.fal.media/files/b/0a87bce8/zVCK4qKSE4CJCrFrVrHP1.jpg",
+    "https://v3b.fal.media/files/b/0a87bce8/4MfqK9rXRrrHmOpGWXhoE.jpg",
+    "https://v3b.fal.media/files/b/0a87bce9/1DYAICIoU2mRweTwY0XAR.jpg"
+  ],
+  "audio_link": "https:/v3b.fal.media/files/b/0a87bcf6/gZdFgJGiGg-tirM9EAJ72_tmp78cg2e5e.wav"
+}

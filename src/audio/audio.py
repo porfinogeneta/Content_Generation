@@ -11,6 +11,7 @@ import pyrubberband as pyrb
 from consts.test_consts import AUDIO_FILE
 import fal_client
 import requests
+from typing import List
 
 
 load_dotenv()
@@ -47,7 +48,7 @@ class FalClient:
 
 
 
-def generate_audio(text_to_read: str,
+def generate_audio(text_to_read: List[str],
                     test=False) -> Path:
     
     """
@@ -56,7 +57,7 @@ def generate_audio(text_to_read: str,
     if test:
         return AUDIO_FILE
     
-
+    # concurrenlty generate audio for each image, then concat the file
     # FALAI CLIENT
     fal_client = FalClient()
     return fal_client.text_to_speech_convert(text_to_read)

@@ -1,0 +1,10 @@
+__pycache__
+*/__pycache__
+venv/
+.env
+credentials.json
+token.json
+.git
+.gitignore
+content_generation.egg-info
+Docker*
