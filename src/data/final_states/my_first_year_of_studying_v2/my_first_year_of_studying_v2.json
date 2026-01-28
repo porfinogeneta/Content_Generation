@@ -1,0 +1,43 @@
+{
+  "topic": "My first year of studying",
+  "story_slug": "my_first_year_of_studying",
+  "test": false,
+  "story": {
+    "title": "From Naive Freshman to Barely Functioning Adult: My First Year of University",
+    "text": "Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma. Coming straight out of high school, I thought I was prepared. I had good grades, I was organized, I even knew how to do my own laundry (mostly). Boy, was I wrong.\n\nThe first semester was a blur of orientation events, trying to figure out the campus map without looking like a lost puppy, and attempting to make friends in a sea of thousands of new faces. Lectures were overwhelming – suddenly, professors weren't just teaching; they were *expecting* you to understand complex theories in an hour. My first essay deadline hit me like a truck. I pulled an all-nighter, fueled by instant coffee and sheer panic, and submitted something I was only 50% sure made sense. The grade wasn't great, but it was a wake-up call.\n\nSecond semester was a different beast. I thought I had the hang of it, but then the real grind began. Group projects became a test of patience and diplomacy. I learned that 'group work' often means 'one person does 80% of the work while others contribute memes.' There were moments of pure despair, like staring at a textbook at 3 AM, convinced I understood absolutely nothing, or getting a midterm back that made me question all my life choices. Imposter syndrome was a constant companion.\n\nBut it wasn't all doom and gloom. I found my people – a small group of friends who understood the struggle, shared notes, and were always down for a late-night snack run. I discovered a passion for a subject I never expected to love. I learned to cook (badly, but still). I figured out how to manage my time (mostly). I even started enjoying the challenge of some of the more difficult concepts.\n\nLooking back, it was a rollercoaster. I cried, I laughed, I probably aged five years. But I also grew so much. I'm more independent, more resilient, and I actually feel like I'm capable of tackling bigger things. To all the incoming freshmen: you got this. It's tough, but it's worth it. And for those who've been there, done that: what were your craziest first-year stories?",
+    "tldr": "Survived first year of university; it was a challenging rollercoaster of academic stress, social adjustments, and imposter syndrome, but also personal growth, new friendships, and unexpected passions."
+  },
+  "image_prompts": [
+    {
+      "text": "Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma. Coming straight out of high school, I thought I was prepared.",
+      "img_prompt": "A young university student, looking utterly exhausted but with a faint, ironic smile, slumped over a desk piled high with textbooks and a glowing laptop. The dorm room is slightly messy, with empty coffee cups. Soft, warm light from a desk lamp contrasts with the cool, dim light of dawn peeking through a window. Cinematic, realistic, conveying weariness and a sense of accomplishment."
+    },
+    {
+      "text": "I had good grades, I was organized, I even knew how to do my own laundry (mostly). Boy, was I wrong.",
+      "img_prompt": "A dynamic split image: On one side, a pristine high school student with perfectly stacked books and a neatly folded laundry basket, looking confident and organized. On the other side, the same student in a chaotic university dorm room, surrounded by crumpled papers, overflowing laundry, and a bewildered expression of realization. Bright, optimistic lighting for the 'prepared' side; harsher, more realistic lighting for the 'wrong' side. Cinematic, slightly exaggerated for comedic effect."
+    }
+  ],
+  "prompts_to_read": [
+    {
+      "text": "Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma."
+    },
+    {
+      "text": "Coming straight out of high school, I thought I was prepared."
+    },
+    {
+      "text": "I had good grades, I was organized, I even knew how to do my own laundry (mostly)."
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/0a8c360c/Empn0AeKB7J702-g3X5V5.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/heQEnkU9-whmwCo_a5I5k.jpg"
+  ],
+  "audio_links": [
+    "https://v3b.fal.media/files/b/0a8c3616/wgYGLFC-sy5JRoSOe8LOI_tmpoyvjpd4o.wav",
+    "https://v3b.fal.media/files/b/0a8c3614/22YqCiEYOm2q4O8pKqu1L_tmpwkgg0s2e.wav",
+    "https://v3b.fal.media/files/b/0a8c3614/76in6y6B6FQ27OaSxxohA_tmpbz6t5hi3.wav",
+    "https://v3b.fal.media/files/b/0a8c3615/xYyri96UIrUpd_wC6si8F_tmpi4f3fmbk.wav",
+    "https://v3b.fal.media/files/b/0a8c3615/3nXxc-dJHthvkqq9RzVeN_tmpw11unn4f.wav",
+    "https://v3b.fal.media/files/b/0a8c3616/Os6X9I-XxQqJRQpNaPh1N_tmp51maqeho.wav"
+  ]
+}

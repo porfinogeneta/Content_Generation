@@ -16,6 +16,9 @@ class ImagesPromptsOutput(BaseModel):
     text: str
     img_prompt: str
 
+class PromptToReadOutput(BaseModel):
+    text: str
+
 
 # AUDIO
 
@@ -26,5 +29,12 @@ class GraphState(BaseModel):
     test: bool
     story: StoryGenerationOutput | None
     image_prompts: List [ImagesPromptsOutput] | None
+    prompts_to_read: List[PromptToReadOutput] | None
     photo_links: List[str] | None
-    audio_link: Path | None
+    audio_links: List[str] | None
+
+
+# UPLOADING
+class Video(BaseModel):
+    video: Path
+    description: str 

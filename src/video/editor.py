@@ -15,13 +15,13 @@ import math
 import soundfile as sf
 import pyrubberband as pyrb
 import pysrt
-import os
+import shutil
 import time
 
 ROOT_SRC = Path(__file__).resolve().parent.parent
 INPUT_DATA_PATH = ROOT_SRC / "data" / "final_states"
 DATA_PATH = ROOT_SRC / "data"
-
+COOKIES_PATH = Path(__file__).resolve().parent.parent / "cookies.txt"
 
     
 
@@ -29,33 +29,33 @@ DATA_PATH = ROOT_SRC / "data"
 class Editor:
 
     def __init__(self, 
-                title: str,
+                topic: str,
                 scenes: List[str],
-                audio_url: str,
                 playback_speed: float,
+                audio_urls:  List[str],
                 image_urls: List[str],
                 ):
         
-        self.title = title
-        self.story_slug = title.lower().replace(" ", "_")
+        self.topic = topic
+        self.story_slug = topic.lower().replace(" ", "_")
         self.scenes = scenes
-        self.audio_url = audio_url
+        self.audio_urls = audio_urls
         self.playback_speed = playback_speed
         self.image_urls = image_urls
         self.video_size = (1080, 1920)
         self.zoom_factor = 0.30
         
         # output directories
-        self.audio_dir = DATA_PATH / self.story_slug / "audio"
+        self.audio_dir = DATA_PATH  / "videos" /  self.story_slug / "audio"
         self.audio_dir.mkdir(parents=True, exist_ok=True)
 
-        self.imgs_dir = DATA_PATH / self.story_slug / "images"
+        self.imgs_dir = DATA_PATH  / "videos" /  self.story_slug / "images"
         self.imgs_dir.mkdir(parents=True, exist_ok=True)
 
-        self.videos_dir = DATA_PATH / self.story_slug / "video"
+        self.videos_dir = DATA_PATH / "videos" / self.story_slug
         self.videos_dir.mkdir(parents=True, exist_ok=True)
 
-        self.srt_path = DATA_PATH / self.story_slug / Path(f"{self.story_slug}_subtitles")
+        self.srt_path = DATA_PATH  / "videos" /  self.story_slug / Path(f"{self.story_slug}_subtitles")
         self.srt_path.mkdir(parents=True, exist_ok=True)
 
         # has to be predefined earlier
@@ -161,45 +161,102 @@ class Editor:
 
         return final_output_file
 
-    
 
-    def fetch_audio(self) -> Path:
+    def fetch_audios_concurrently(self) -> List[Tuple[int, Path]]:
         """
-            Fetches audio file and speeds it up
+        Fetches multiple audio files concurrently.
         """
+        MAX_WORKERS = 5
+        audio_files = []
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            future_to_index = {
+                executor.submit(self.fetch_data, url=url, destination=self.audio_dir, suffix=".wav", index=i): i
+                for i, url in enumerate(self.audio_urls)
+            }
+
+        for future in concurrent.futures.as_completed(future_to_index):
+            i = future_to_index[future]
+            try:
+                path = future.result()
+                audio_files.append((i, path))
+            except Exception as exc:
+                print(f"Audio fetch failed for index {i}: {exc}")
+
+        # Ensure they are sorted by index so the story makes sense
+        audio_files.sort(key=lambda x: x[0])
+        return audio_files
+
+    def process_and_concat_audio(self, audio_paths: List[Path]) -> Tuple[Path, List[float]]:
+        """
+        Reads audio files, applies speed up (rubberband), concatenates them into one file,
+        and returns the final path.
+        """
+        combined_audio = []
+        sample_rate = None
+
+        for path in audio_paths:
+            y, sr = sf.read(str(path))
+            if sample_rate is None:
+                sample_rate = sr
+            elif sr != sample_rate:
+                # In production, you might need resampling here
+                print(f"Warning: Sample rate mismatch {sr} vs {sample_rate}")
+
+            # Apply speed up
+            if self.playback_speed != 1.0:
+                y_processed = pyrb.time_stretch(y, sr, self.playback_speed)
+            else:
+                y_processed = y
+
+         
+            combined_audio.append(y_processed)
+
+        # Concatenate numpy arrays
+        final_y = np.concatenate(combined_audio)
+        
+        final_output_path = self.audio_dir / "final_concatenated_audio.wav"
+        sf.write(final_output_path, final_y, sample_rate, format='wav')
+
+        return final_output_path
+
+    # def fetch_audio(self) -> Path:
+    #     """
+    #         Fetches audio file and speeds it up
+    #     """
 
         
 
-        final_output_path = self.audio_dir / "final_audio.wav"
+    #     final_output_path = self.audio_dir / "final_audio.wav"
 
-        tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
-        temp_path = Path(tmp.name)
+    #     tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
+    #     temp_path = Path(tmp.name)
 
-        # allow fetch data to open
-        tmp.close()
-        try:
+    #     # allow fetch data to open
+    #     tmp.close()
+    #     try:
 
-            self.fetch_data(url=self.audio_url, destination=temp_path, suffix=".wav", index=0)
+    #         self.fetch_data(url=self.audio_url, destination=temp_path, suffix=".wav", index=0)
 
-            # # put file pointer at the beginning
-            # tmp.seek(0)
+    #         # # put file pointer at the beginning
+    #         # tmp.seek(0)
 
-            # speed up and return wav
-            y, sr = sf.read(temp_path)
+    #         # speed up and return wav
+    #         y, sr = sf.read(temp_path)
             
-            # Play back at 1.5X speed
-            y_stretch = pyrb.time_stretch(y, sr, self.playback_speed)
-            # Play back two 1.5x tones
-            # y_shift = pyrb.pitch_shift(y, sr, 1.5)
+    #         # Play back at 1.5X speed
+    #         y_stretch = pyrb.time_stretch(y, sr, self.playback_speed)
+    #         # Play back two 1.5x tones
+    #         # y_shift = pyrb.pitch_shift(y, sr, 1.5)
 
-            sf.write(final_output_path, y_stretch, sr, format='wav')
+    #         sf.write(final_output_path, y_stretch, sr, format='wav')
 
-            return final_output_path
+    #         return final_output_path
         
-        finally:
-            # because we didn't delete temp file (delete=False)
-            if os.path.exists(temp_path):
-                os.remove(temp_path)
+    #     finally:
+    #         # because we didn't delete temp file (delete=False)
+    #         if os.path.exists(temp_path):
+    #             os.remove(temp_path)
 
     def fetch_images(self) -> List[str]:
         """
@@ -240,65 +297,6 @@ class Editor:
     def __convert_time_seconds(self, t: time):
         return (t.hour * 60 + t.minute) * 60 + t.second + (t.microsecond / 1000000.0)
     
-    # def determine_time(self, transcript: Path, audio_duration: float):
-    #     """
-    #         Gets amount of words in each image, then calculates
-    #         the percentage of words each scene should take
-
-    #         Returns time per images, based on the transcript file with the ration
-    #         taken based on percentages in each scene
-    #     """
-    #     length_in_words = [len(elem["text"].split()) for elem in self.scenes]
-    #     total_word_len = sum(length_in_words)
-    #     ratios = [l/total_word_len for l in length_in_words]
-
-    #     # read srt file into tuples:
-    #     # start in seconds, end in seconds, words in each chunk of transcript
-    #     # (start, end, words)
-    #     transcript_tuples = []
-    #     all_words_cnt = 0
-    #     subs = pysrt.open(transcript)
-    #     # subs = pysrt.open(transcript)
-    #     for sub in subs:
-    #         # divide to convert into float
-    #         start_time: time = self.__convert_time_seconds(sub.start.to_time())
-    #         end_time: time =  self.__convert_time_seconds(sub.end.to_time())
-    #         words_amount = len(sub.text.strip().split())
-    #         transcript_tuples.append([start_time, end_time, words_amount])
-    #         all_words_cnt += words_amount
-           
-    #     # ratio of all the words in the transcript
-    #     transcript_tuples = [[s, e, l / all_words_cnt] for s,e,l in transcript_tuples]
-
-    #     # construct time per images array, containing time needed to fill in the ratio for a given image
-    #     time_per_images = []
-    #     i = 0
-    #     j = 0
-    #     while i < len(self.scenes):
-    #         # gather ratios until getting a ratio bigger or equal to ratio for a specific image
-    #         start, _, _ = transcript_tuples[j]
-    #         gathered_ratio = 0
-    #         while j < len(transcript_tuples):
-    #             _, _, r = transcript_tuples[j]
-    #             gathered_ratio += r
-    #             j += 1
-    #             if gathered_ratio > ratios[i]:
-    #                 break
-
-                
-    #         # last tuple should be considered as the end value
-    #         _, end, _ = transcript_tuples[j - 1]
-    #         time_per_images.append(end - start)
-    #         i += 1
-
-    #     # make images match the total duration exaclty
-    #     calculated_total = sum(time_per_images)
-    #     if calculated_total > 0:
-    #         correction_factor = audio_duration / calculated_total
-    #         time_per_images = [t * correction_factor for t in time_per_images]
-
-        
-    #     return time_per_images
 
     def determine_time(self, transcript: Path, audio_duration: float):
         
@@ -418,12 +416,19 @@ class Editor:
         # concurrently fetch data
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
             future_images = executor.submit(self.fetch_images)
-            future_audio = executor.submit(self.fetch_audio)
+            future_audios = executor.submit(self.fetch_audios_concurrently)
 
             # wait for resources, returns path to resources
+            # tuples idx, path
             image_files = future_images.result()
-            audio_file = future_audio.result()
+            audio_files = future_audios.result()
 
+
+        # if len(image_files) != len(audio_files):
+        #     print("Warning: Number of images and audio files do not match. Syncing might be off.")
+
+        audio_files = [file for _,file in audio_files]
+        audio_file = self.process_and_concat_audio(audio_files)
 
         audio_clip = AudioFileClip(str(audio_file))
         audio_duration = audio_clip.duration
@@ -510,11 +515,20 @@ class Editor:
         final_output_path = self.videos_dir / Path(f"{self.story_slug}.mp4")
         video.write_videofile(final_output_path, fps=24)
 
+        # clean-up the files
+        self.__clean_folders()
+
+    def __clean_folders(self):
+        folders = [self.audio_dir, self.imgs_dir, self.srt_path]
+        for folder in folders:
+            if folder.exists() and folder.is_dir():
+                shutil.rmtree(folder)
+
 
 
 if __name__ == "__main__":
 
-    title_ = "short_story_about_quick_fox"
+    title_ = "my_first_year_of_studying_v2"
     INPUT_DICT_PATH = INPUT_DATA_PATH / title_ / Path(f"{title_}.json")
     movie_data = None
 
@@ -524,12 +538,12 @@ if __name__ == "__main__":
     except:
         raise Exception("file")
     
-    TITLE = movie_data.get("title", None)
+    TITLE = movie_data.get("topic", None)
 
-    editor = Editor(title=TITLE,
+    editor = Editor(topic=TITLE + "_v2",
                     playback_speed=1.5,
                     scenes=movie_data["image_prompts"],
-                    audio_url=movie_data["audio_link"],
+                    audio_urls=movie_data["audio_links"],
                     image_urls=movie_data["photo_links"])
     
     editor.create_video()

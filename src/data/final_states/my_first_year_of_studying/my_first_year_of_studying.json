@@ -1,0 +1,200 @@
+{
+  "topic": "My first year of studying",
+  "story_slug": "my_first_year_of_studying",
+  "test": false,
+  "story": {
+    "title": "From Naive Freshman to Barely Functioning Adult: My First Year of University",
+    "text": "Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma. Coming straight out of high school, I thought I was prepared. I had good grades, I was organized, I even knew how to do my own laundry (mostly). Boy, was I wrong.\n\nThe first semester was a blur of orientation events, trying to figure out the campus map without looking like a lost puppy, and attempting to make friends in a sea of thousands of new faces. Lectures were overwhelming – suddenly, professors weren't just teaching; they were *expecting* you to understand complex theories in an hour. My first essay deadline hit me like a truck. I pulled an all-nighter, fueled by instant coffee and sheer panic, and submitted something I was only 50% sure made sense. The grade wasn't great, but it was a wake-up call.\n\nSecond semester was a different beast. I thought I had the hang of it, but then the real grind began. Group projects became a test of patience and diplomacy. I learned that 'group work' often means 'one person does 80% of the work while others contribute memes.' There were moments of pure despair, like staring at a textbook at 3 AM, convinced I understood absolutely nothing, or getting a midterm back that made me question all my life choices. Imposter syndrome was a constant companion.\n\nBut it wasn't all doom and gloom. I found my people – a small group of friends who understood the struggle, shared notes, and were always down for a late-night snack run. I discovered a passion for a subject I never expected to love. I learned to cook (badly, but still). I figured out how to manage my time (mostly). I even started enjoying the challenge of some of the more difficult concepts.\n\nLooking back, it was a rollercoaster. I cried, I laughed, I probably aged five years. But I also grew so much. I'm more independent, more resilient, and I actually feel like I'm capable of tackling bigger things. To all the incoming freshmen: you got this. It's tough, but it's worth it. And for those who've been there, done that: what were your craziest first-year stories?",
+    "tldr": "Survived first year of university; it was a challenging rollercoaster of academic stress, social adjustments, and imposter syndrome, but also personal growth, new friendships, and unexpected passions."
+  },
+  "image_prompts": [
+    {
+      "text": "Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma. Coming straight out of high school, I thought I was prepared.",
+      "img_prompt": "A young university student, looking utterly exhausted but with a faint, ironic smile, slumped over a desk piled high with textbooks and a glowing laptop. The dorm room is slightly messy, with empty coffee cups. Soft, warm light from a desk lamp contrasts with the cool, dim light of dawn peeking through a window. Cinematic, realistic, conveying weariness and a sense of accomplishment."
+    },
+    {
+      "text": "I had good grades, I was organized, I even knew how to do my own laundry (mostly). Boy, was I wrong.",
+      "img_prompt": "A dynamic split image: On one side, a pristine high school student with perfectly stacked books and a neatly folded laundry basket, looking confident and organized. On the other side, the same student in a chaotic university dorm room, surrounded by crumpled papers, overflowing laundry, and a bewildered expression of realization. Bright, optimistic lighting for the 'prepared' side; harsher, more realistic lighting for the 'wrong' side. Cinematic, slightly exaggerated for comedic effect."
+    },
+    {
+      "text": "The first semester was a blur of orientation events, trying to figure out the campus map without looking like a lost puppy, and attempting to make friends in a sea of thousands of new faces. Lectures were overwhelming – suddenly, professors weren't just teaching; they were *expecting* you to understand complex theories in an hour.",
+      "img_prompt": "A fast-paced montage: A student looking overwhelmed in a bustling university quad, holding a campus map upside down amidst a sea of diverse faces. Quick cuts to a vast, impersonal lecture hall with a tiny student figure, then a close-up of a professor gesturing intensely, and complex, abstract equations on a whiteboard. Dynamic composition, slightly disorienting, with bright, chaotic daylight for campus and stark, academic lighting for lectures. Cinematic, realistic."
+    },
+    {
+      "text": "My first essay deadline hit me like a truck. I pulled an all-nighter, fueled by instant coffee and sheer panic, and submitted something I was only 50% sure made sense.",
+      "img_prompt": "A student hunched over a laptop in a dimly lit dorm room at 4 AM, surrounded by empty instant coffee mugs, crumpled papers, and open textbooks. Their face is pale, eyes wide with panic and exhaustion, illuminated by the harsh glow of the laptop screen. Deep shadows fill the room, emphasizing the isolation and stress. Gritty realism, high contrast, cinematic, conveying urgency and despair."
+    },
+    {
+      "text": "The grade wasn't great, but it was a wake-up call. Second semester was a different beast.",
+      "img_prompt": "A medium close-up of a student staring intently at a computer screen displaying a disappointing grade. Their expression shifts from shock to a subtle, determined resolve. The background subtly suggests a new academic semester, perhaps a change in the light outside a window. Neutral, slightly somber lighting for the grade reveal, transitioning to a more focused, determined light. Cinematic, realistic, emphasizing emotional shift."
+    },
+    {
+      "text": "I thought I had the hang of it, but then the real grind began. Group projects became a test of patience and diplomacy.",
+      "img_prompt": "A medium shot of a university study room. One student (the protagonist) is intensely focused on a laptop, looking frustrated and doing the majority of the work, while other group members are visibly distracted: one scrolling on a phone, another doodling, a third looking bored. A meme is visible on one of the phone screens. Fluorescent overhead lighting, realistic, slightly comedic in its portrayal of group dynamics. Cinematic."
+    },
+    {
+      "text": "I learned that 'group work' often means 'one person does 80% of the work while others contribute memes. ' There were moments of pure despair, like staring at a textbook at 3 AM, convinced I understood absolutely nothing, or getting a midterm back that made me question all my life choices.",
+      "img_prompt": "A series of quick, dramatic cuts: First, a close-up of a phone screen displaying a humorous meme, held by a slacking group member, contrasted with the protagonist's stressed, exasperated face. Second, a student alone in a dimly lit library or dorm room at 3 AM, head buried in hands, surrounded by open textbooks, looking utterly defeated. Third, a close-up of a midterm paper with a low, red grade, held by a trembling hand. High contrast, dramatic lighting, realistic, conveying despair and frustration. Cinematic."
+    },
+    {
+      "text": "Imposter syndrome was a constant companion. But it wasn't all doom and gloom.",
+      "img_prompt": "A cinematic medium shot of a young university student, looking overwhelmed and slightly lost amidst a bustling, grand university library or lecture hall. Their expression conveys a subtle sense of imposter syndrome, but a faint, hopeful light catches their eye, hinting at a shift. Soft, melancholic lighting with a touch of warm light breaking through, realistic style."
+    },
+    {
+      "text": "I found my people – a small group of friends who understood the struggle, shared notes, and were always down for a late-night snack run. I discovered a passion for a subject I never expected to love.",
+      "img_prompt": "A warm, candid wide shot of a small, diverse group of university friends gathered in a cozy dorm room or common area late at night. They are laughing, sharing notes, and surrounded by snack wrappers and textbooks, embodying camaraderie and shared struggle. Soft, inviting ambient light from a desk lamp or string lights, authentic, slice-of-life style."
+    },
+    {
+      "text": "I learned to cook (badly, but still). I figured out how to manage my time (mostly).",
+      "img_prompt": "A humorous, slightly exaggerated close-up of a university student in a small, slightly messy dorm kitchen, looking comically bewildered or proudly presenting a questionable culinary creation (e.g., burnt toast, an overflowing pot). Bright, functional kitchen lighting, relatable, comedic style."
+    },
+    {
+      "text": "I even started enjoying the challenge of some of the more difficult concepts. Looking back, it was a rollercoaster.",
+      "img_prompt": "A focused, thoughtful medium shot of a university student deeply engrossed in a complex textbook or problem set, surrounded by diagrams and equations. A subtle smile plays on their lips, indicating enjoyment of the intellectual challenge. Focused, directional lighting on the student and their work, creating a sense of concentration and intellectual engagement, thoughtful, academic style."
+    },
+    {
+      "text": "I cried, I laughed, I probably aged five years. But I also grew so much.",
+      "img_prompt": "A powerful, cinematic portrait of a university student, dynamically capturing their emotional rollercoaster. One side of their face shows a hint of past stress or tears, while the other side radiates newfound confidence and resilience, symbolizing growth. Contrasting warm and cool lighting to reflect emotional highs and lows, expressive, emotional portraiture style."
+    },
+    {
+      "text": "I'm more independent, more resilient, and I actually feel like I'm capable of tackling bigger things. To all the incoming freshmen: you got this.",
+      "img_prompt": "An inspirational, cinematic wide shot of a confident university student standing tall, looking out over a vibrant university campus or a city skyline at dawn or dusk. Their posture exudes independence and readiness to tackle bigger challenges. Golden hour light, warm and hopeful, symbolizing a new beginning and empowerment."
+    },
+    {
+      "text": "It's tough, but it's worth it. And for those who've been there, done that: what were your craziest first-year stories?",
+      "img_prompt": "A warm, nostalgic wide shot of a diverse group of young adults (alumni or upperclassmen) gathered in a cozy coffee shop or pub, laughing heartily and sharing stories, a sense of shared history and camaraderie evident. Cozy, ambient lighting, creating an intimate and nostalgic atmosphere, candid, storytelling style."
+    }
+  ],
+  "prompts_to_read": [
+    {
+      "text": "Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma."
+    },
+    {
+      "text": "Coming straight out of high school, I thought I was prepared."
+    },
+    {
+      "text": "I had good grades, I was organized, I even knew how to do my own laundry (mostly)."
+    },
+    {
+      "text": "Boy, was I wrong."
+    },
+    {
+      "text": "The first semester was a blur of orientation events, trying to figure out the campus map without looking like a lost puppy, and attempting to make friends in a sea of thousands of new faces."
+    },
+    {
+      "text": "Lectures were overwhelming – suddenly, professors weren't just teaching; they were *expecting* you to understand complex theories in an hour."
+    },
+    {
+      "text": "My first essay deadline hit me like a truck."
+    },
+    {
+      "text": "I pulled an all-nighter, fueled by instant coffee and sheer panic, and submitted something I was only 50% sure made sense."
+    },
+    {
+      "text": "The grade wasn't great, but it was a wake-up call."
+    },
+    {
+      "text": "Second semester was a different beast."
+    },
+    {
+      "text": "I thought I had the hang of it, but then the real grind began."
+    },
+    {
+      "text": "Group projects became a test of patience and diplomacy."
+    },
+    {
+      "text": "I learned that 'group work' often means 'one person does 80% of the work while others contribute memes."
+    },
+    {
+      "text": "' There were moments of pure despair, like staring at a textbook at 3 AM, convinced I understood absolutely nothing, or getting a midterm back that made me question all my life choices."
+    },
+    {
+      "text": "Imposter syndrome was a constant companion."
+    },
+    {
+      "text": "But it wasn't all doom and gloom."
+    },
+    {
+      "text": "I found my people – a small group of friends who understood the struggle, shared notes, and were always down for a late-night snack run."
+    },
+    {
+      "text": "I discovered a passion for a subject I never expected to love."
+    },
+    {
+      "text": "I learned to cook (badly, but still)."
+    },
+    {
+      "text": "I figured out how to manage my time (mostly)."
+    },
+    {
+      "text": "I even started enjoying the challenge of some of the more difficult concepts."
+    },
+    {
+      "text": "Looking back, it was a rollercoaster."
+    },
+    {
+      "text": "I cried, I laughed, I probably aged five years."
+    },
+    {
+      "text": "But I also grew so much."
+    },
+    {
+      "text": "I'm more independent, more resilient, and I actually feel like I'm capable of tackling bigger things."
+    },
+    {
+      "text": "To all the incoming freshmen: you got this."
+    },
+    {
+      "text": "It's tough, but it's worth it."
+    },
+    {
+      "text": "And for those who've been there, done that: what were your craziest first-year stories?"
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/0a8c360c/Empn0AeKB7J702-g3X5V5.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/heQEnkU9-whmwCo_a5I5k.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/rtRg6Mhhe5Lg3ZCkkpdWX.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/j58eBlRNYnruXE8tgV81F.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/5FMmrEelVN3WXR7NMHT2t.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/JUX4qv2aYIOXfEVvTdhiZ.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/wMiz8g-7iR4wo4WcEGbcC.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/om5aSPynbiOYivusR2GrZ.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/Ou7coUEn508mVfCkueBUM.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/xGTv_jIby2zKSx-RZBH9_.jpg",
+    "https://v3b.fal.media/files/b/0a8c360c/zkdNUkaJHcwN5JCLmxbaZ.jpg",
+    "https://v3b.fal.media/files/b/0a8c360d/B5K8KJYuZUjQsiowPnIe2.jpg",
+    "https://v3b.fal.media/files/b/0a8c360d/_ewKk54v8qEj3rgSqv5lY.jpg",
+    "https://v3b.fal.media/files/b/0a8c360d/Z8hf6ntNDT9hlQ2BJJdcN.jpg"
+  ],
+  "audio_links": [
+    "https://v3b.fal.media/files/b/0a8c3616/wgYGLFC-sy5JRoSOe8LOI_tmpoyvjpd4o.wav",
+    "https://v3b.fal.media/files/b/0a8c3614/22YqCiEYOm2q4O8pKqu1L_tmpwkgg0s2e.wav",
+    "https://v3b.fal.media/files/b/0a8c3614/76in6y6B6FQ27OaSxxohA_tmpbz6t5hi3.wav",
+    "https://v3b.fal.media/files/b/0a8c3615/xYyri96UIrUpd_wC6si8F_tmpi4f3fmbk.wav",
+    "https://v3b.fal.media/files/b/0a8c3615/3nXxc-dJHthvkqq9RzVeN_tmpw11unn4f.wav",
+    "https://v3b.fal.media/files/b/0a8c3616/Os6X9I-XxQqJRQpNaPh1N_tmp51maqeho.wav",
+    "https://v3b.fal.media/files/b/0a8c3617/FoY-J6AKoOu17bytmgIf9_tmphpuo2ks3.wav",
+    "https://v3b.fal.media/files/b/0a8c3617/fV7bAoRmEUZcCSLn7itDO_tmppd3vn091.wav",
+    "https://v3b.fal.media/files/b/0a8c3617/TvsgGZB5Bmreel8u0wO2E_tmpg_6srxpr.wav",
+    "https://v3b.fal.media/files/b/0a8c3618/FrsfHbHVCgaWS8g71eAxZ_tmpmf7krta5.wav",
+    "https://v3b.fal.media/files/b/0a8c3618/ZRqD1itJ8lH6Pxn-Po8HV_tmpttf4flie.wav",
+    "https://v3b.fal.media/files/b/0a8c3618/gPjfXT_gjCV-a1vH76Azs_tmp85czbj47.wav",
+    "https://v3b.fal.media/files/b/0a8c3619/z94BGDxW6YoS_bxEeAl1V_tmp16x84zan.wav",
+    "https://v3b.fal.media/files/b/0a8c361a/RvkecyEyi3Xtu-_xmvo_N_tmp998dw49y.wav",
+    "https://v3b.fal.media/files/b/0a8c361a/LHIVhuYjquoT4bs39J4Cz_tmpyiw713h0.wav",
+    "https://v3b.fal.media/files/b/0a8c361a/6D0Q25SK67YSdXgRKSDRv_tmpf4oinv4a.wav",
+    "https://v3b.fal.media/files/b/0a8c361b/ZNCsMWCMyoMvdxzyO6Lnu_tmpeb0uywdy.wav",
+    "https://v3b.fal.media/files/b/0a8c361b/CmA8ejoPepe_ax5Z4iI0P_tmpyudktfzv.wav",
+    "https://v3b.fal.media/files/b/0a8c361b/zKVBBsiD9_SNIsr4YRcUH_tmpoh5l97pj.wav",
+    "https://v3b.fal.media/files/b/0a8c361c/KdqZZaNy7aqKVyh1zH5wu_tmpipl0eu7j.wav",
+    "https://v3b.fal.media/files/b/0a8c361c/IkMSGulkd35Q7DwuYyqcA_tmp1fuizmsr.wav",
+    "https://v3b.fal.media/files/b/0a8c361c/DLVsNqCgozVzlhs9Bq7F__tmpb8cvdvpc.wav",
+    "https://v3b.fal.media/files/b/0a8c361d/HSd1sF5mGm-eanB_OJbk-_tmp3xcm838y.wav",
+    "https://v3b.fal.media/files/b/0a8c361d/4gF0kZK-q1Z3Q-gXJG2mJ_tmpqrbebphy.wav",
+    "https://v3b.fal.media/files/b/0a8c361d/I4ZVHPqtD8ikOdStmsUJg_tmpt50kl4uy.wav",
+    "https://v3b.fal.media/files/b/0a8c361e/oU_fkeyFFFie6zSS9C7qZ_tmp64hhzzom.wav",
+    "https://v3b.fal.media/files/b/0a8c361e/nxHtz_d9L45vPKN9VnjOw_tmp8jb_unzo.wav",
+    "https://v3b.fal.media/files/b/0a8c361e/Ix40XGYJvmDdDoTlxmukB_tmpdcxywvpe.wav"
+  ]
+}

@@ -12,6 +12,7 @@ from consts.test_consts import AUDIO_FILE
 import fal_client
 import requests
 from typing import List
+from schemas.schemas import PromptToReadOutput
 
 
 load_dotenv()
@@ -47,8 +48,18 @@ class FalClient:
         return url
 
 
+def generate_text_to_read(text: str, test=False):
+    """
+        TODO: employ prompt programming here
+        Takes prompts to images and refactors them to be suitable for our story telling tts.
+    """
+    if test:
+        return PromptToReadOutput(text="hello")
 
-def generate_audio(text_to_read: List[str],
+    return PromptToReadOutput(text=text)
+
+
+def generate_audio(text_to_read: str,
                     test=False) -> Path:
     
     """

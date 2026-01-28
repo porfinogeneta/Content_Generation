@@ -4,34 +4,188 @@ from google.genai import types
 import dspy
 import pydantic
 from dotenv import load_dotenv
+import time
+from tqdm import tqdm
+import re
+from typing import List
 
 from schemas.schemas import ImagesPromptsOutput
 from consts.test_consts import STORY_CHUNKED
 from typing import List
 
+
 load_dotenv()
 
 
-STORY = """So, I just moved into this charming, albeit slightly creaky, old apartment building downtown. It's got character, you know? High ceilings, original hardwood, and a landlord, Mr. Henderson, who's been managing properties in this city for what feels like a century. He's a stickler for details, which I appreciate, but it also meant our move-in inspection was going to be *thorough*. And I mean *thorough*.\n\nWe started in the living room, documenting every tiny scuff, every paint chip, every slightly loose floorboard. He had a clipboard, a flashlight, and a magnifying glass, no joke. We moved into the master bedroom, which had this rather large, built-in bookshelf in the closet. It looked old, probably original to the building, and a bit rickety, but functional.\n\nMr. Henderson was meticulously checking the back wall of the closet, behind the bookshelf. He was tapping, listening, making notes about the plaster. Suddenly, he stopped. He tapped again, a bit harder, on a specific spot. It sounded distinctly hollow. He frowned, then pushed gently. Nothing. He pushed a bit harder, and to both our astonishment, a faint, almost invisible seam appeared in the wall, running vertically and horizontally.\n\nHis eyes widened. \"Well, I'll be,\" he muttered, completely taken aback. He tried to pry it open, but it was stuck. I offered to help, and together, we managed to get a grip on the edge. With a collective grunt, a section of the wall, about three feet wide and five feet tall, swung inward with a soft creak, revealing a small, dark, dusty, empty room. It was barely big enough for one person to stand in, maybe 4x4 feet, and completely bare except for a thick layer of dust and cobwebs.\n\nWe both just stood there, staring into the void. Mr. Henderson, who had owned and managed this building for over twenty years, was absolutely speechless. \"I... I had no idea,\" he finally stammered, his flashlight beam dancing around the tiny space. \"Never in all my years. This is... incredible!\" We found nothing but a single, very old, empty wooden box in the corner, but the sheer surprise of it was enough. He was so excited, he almost forgot to finish the rest of the inspection. He even joked that it was a 'bonus feature' of the apartment. I'm still trying to figure out what it was used for, but it definitely made for the most interesting move-in inspection of my life."""
+STORY = """Okay, Reddit, I officially survived my first year of university, and honestly, I'm not sure if I should be celebrating or just collapsing into a coma. Coming straight out of high school, I thought I was prepared. I had good grades, I was organized, I even knew how to do my own laundry (mostly). Boy, was I wrong.\n\nThe first semester was a blur of orientation events, trying to figure out the campus map without looking like a lost puppy, and attempting to make friends in a sea of thousands of new faces. Lectures were overwhelming – suddenly, professors weren't just teaching; they were *expecting* you to understand complex theories in an hour. My first essay deadline hit me like a truck. I pulled an all-nighter, fueled by instant coffee and sheer panic, and submitted something I was only 50% sure made sense. The grade wasn't great, but it was a wake-up call.\n\nSecond semester was a different beast. I thought I had the hang of it, but then the real grind began. Group projects became a test of patience and diplomacy. I learned that 'group work' often means 'one person does 80% of the work while others contribute memes.' There were moments of pure despair, like staring at a textbook at 3 AM, convinced I understood absolutely nothing, or getting a midterm back that made me question all my life choices. Imposter syndrome was a constant companion.\n\nBut it wasn't all doom and gloom. I found my people – a small group of friends who understood the struggle, shared notes, and were always down for a late-night snack run. I discovered a passion for a subject I never expected to love. I learned to cook (badly, but still). I figured out how to manage my time (mostly). I even started enjoying the challenge of some of the more difficult concepts.\n\nLooking back, it was a rollercoaster. I cried, I laughed, I probably aged five years. But I also grew so much. I'm more independent, more resilient, and I actually feel like I'm capable of tackling bigger things. To all the incoming freshmen: you got this. It's tough, but it's worth it. And for those who've been there, done that: what were your craziest first-year stories?"""
 
-dspy.configure(lm=dspy.LM("gemini/gemini-2.5-flash"), adapter=dspy.JSONAdapter())
-
-
-
-class StoryImagesPrompts(dspy.Signature):
-    full_story_text: str = dspy.InputField()
-    story: List[ImagesPromptsOutput] = dspy.OutputField(instructions="Divide the story into smallest possible chunks. " \
-    "Make the division dynamic, meaning sentence could be divided into multiple chunks." \
-    "For each chunk create a prompt that will create a photo using the same styling")
+# dspy.configure(lm=dspy.LM("gemini/gemini-2.5-flash"), adapter=dspy.JSONAdapter())
 
 
-def generate_images_prompts(full_story_text: str, test=False) -> List[ImagesPromptsOutput]:
 
+# class StoryImagesPrompts(dspy.Signature):
+#     full_story_text: str = dspy.InputField()
+#     story: List[ImagesPromptsOutput] = dspy.OutputField(
+#         instructions="""Break the story into VERY SMALL chunks - aim for 15-30 chunks minimum for a story of this length.
+        
+#         Create a new chunk (and image prompt) for EACH of these moments:
+#         - Every time a new location or setting is introduced or changes
+#         - Every time a character performs a distinct action or gesture
+#         - Every time there's a change in what's being looked at or focused on
+#         - Every emotional beat or reaction
+#         - Every object mentioned that could be visualized
+#         - Every transition in the narrative flow
+        
+#         Guidelines for chunking:
+#         - A single sentence can and SHOULD produce 2-5 image prompts if it contains multiple visual elements
+#         - Don't combine multiple actions into one chunk - split them up
+#         - Even subtle changes (like a character's expression changing) deserve their own image
+#         - Each chunk should represent ONE clear visual moment, not a sequence
+        
+#         For each image prompt:
+#         - Describe the exact scene composition, camera angle, and focus
+#         - Include consistent character descriptions (Mr. Henderson: elderly landlord, professional appearance)
+#         - Maintain consistent visual style across all prompts (cinematic, realistic photography style)
+#         - Be specific about lighting, mood, and atmosphere
+#         - Include enough detail that each image will be visually distinct from the previous one
+        
+#         Example: Instead of one chunk for "He was tapping on the wall and found a hollow spot", 
+#         create THREE chunks:
+#         1. Mr. Henderson tapping methodically on the closet wall with his knuckles
+#         2. Close-up of his hand stopping on a specific spot, pressing harder
+#         3. His face showing surprise as he hears the hollow sound"""
+#     )
+
+# class StoryBreakdown(dspy.Signature):
+#     """Break story into individual visual moments."""
+#     full_story_text: str = dspy.InputField()
+#     visual_moments: List[str] = dspy.OutputField(
+#         instructions="Extract every single visual moment. Each action, reaction, object mention, or scene change should be its own item. Aim for 20-40 moments minimum."
+#     )
+
+# class MomentToPrompt(dspy.Signature):
+#     """Convert a visual moment into a detailed image generation prompt."""
+#     moment: str = dspy.InputField()
+#     full_context: str = dspy.InputField()
+#     image_prompt: str = dspy.OutputField(
+#         instructions="Create a detailed, cinematic image generation prompt with specific composition, lighting, and style details."
+#     )
+
+
+
+# def generate_images_prompts(full_story_text: str, test=False) -> List[ImagesPromptsOutput]:
+
+#     # if test:
+#     #     return STORY_CHUNKED
+
+#     # predict = dspy.Predict(StoryImagesPrompts)
+#     # return predict(full_story_text=full_story_text).story
+#     # Step 1: Break into moments
+#     breakdown = dspy.Predict(StoryBreakdown)
+#     moments = breakdown(full_story_text=full_story_text).visual_moments
+    
+#     print(f"Found {len(moments)} visual moments")
+    
+#     # Step 2: Convert each moment to a prompt
+#     converter = dspy.Predict(MomentToPrompt)
+#     prompts = []
+#     for moment in moments:
+#         prompt = converter(moment=moment, full_context=full_story_text).image_prompt
+#         prompts.append(prompt)
+    
+#     return prompts
+
+
+# st = generate_images_prompts(full_story_text=STORY)
+# print(len(st))
+# print(st[0])
+
+
+
+
+def chunk_story_rules_based(full_story_text: str) -> List[str]:
+    """
+        Break story into visual moments using rules.
+        For now only 2 senteces are moments, probably this could be replaced
+        with some LLM approach.
+    """
+    
+    # Split into sentences
+    sentences = [m.group().strip() for m in re.finditer(r'[^.?!]*[,.?!]', full_story_text)]
+    moments = []
+
+    # if there is too many sentences, we merge them
+    while len(sentences) > 20:
+        h = []
+        for i in range(0, len(sentences) - 1, 2):
+            h.append(sentences[i] + " " + sentences[i+1])
+        sentences = h
+    
+    moments = sentences
+    # for sentence in sentences:
+    #     if len(sentence.split()) > 30:
+    #         sub_moments = [m.group() for m in re.finditer(r'[^,]*,|[^,]+', sentence)]
+    #         moments += sub_moments
+    #     else:
+    #         moments.append(sentence)
+    
+    return moments
+
+def batch_list(lst, n):
+    for i in range(0, len(lst), n):
+        yield lst[i : i + n]
+
+class MomentsToPrompts(dspy.Signature):
+    """Convert multiple visual moments into detailed image generation prompts in batch."""
+    moments: list[str] = dspy.InputField(desc="List of visual moments to convert")
+    full_context: str = dspy.InputField(desc="Full story text for context")
+    image_prompts: list[str] = dspy.OutputField(
+        desc="List of detailed, cinematic image generation prompts with specific composition, lighting, and style details. Must be in the same order as input moments."
+    )
+
+
+def generate_images_prompts(full_story_text: str, batch_size=7, test=False) -> List[ImagesPromptsOutput]:
     if test:
         return STORY_CHUNKED
+    
+    moments = chunk_story_rules_based(full_story_text)
+    # moments = [full_story_text]
+    # print(f"Generated {len(moments)} moments via rules")
+    # print(len(moments))
+    # Configure model
+    # dspy.configure(lm=dspy.LM("gemini/gemini-2.5-flash"))
+    converter = dspy.Predict(MomentsToPrompts)
 
-    predict = dspy.Predict(StoryImagesPrompts)
-    return predict(full_story_text=full_story_text).story
 
+    outputs = []
 
-# print(generate_images_prompts(full_story_text=STORY))
+    for i in range(0, len(moments), batch_size):
+        # use batched moments
+        batch = moments[i:i+batch_size]
+        # Single API call for all moments
+        result = converter(
+            moments=batch,
+            full_context=full_story_text
+        )
+
+        # print(result)
+
+        # Fallback logic if lengths mismatch
+        if len(result.image_prompts) != len(batch):
+            print("Warning: Length mismatch in batch, padding or truncating...")
+
+    
+        # Combine moments with their prompts
+        for moment, img_prompt in zip(batch, result.image_prompts):
+            outputs.append(
+                ImagesPromptsOutput(
+                    text=moment,
+                    img_prompt=img_prompt
+                )
+            )
+    
+    return outputs
+
+# st = generate_images_prompts(full_story_text=STORY)
+# print(len(st))
+# print(st[0])
