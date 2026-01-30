@@ -21,7 +21,6 @@ import time
 ROOT_SRC = Path(__file__).resolve().parent.parent
 INPUT_DATA_PATH = ROOT_SRC / "data" / "final_states"
 DATA_PATH = ROOT_SRC / "data"
-COOKIES_PATH = Path(__file__).resolve().parent.parent / "cookies.txt"
 
     
 
@@ -30,6 +29,7 @@ class Editor:
 
     def __init__(self, 
                 topic: str,
+                story_slug: str,
                 scenes: List[str],
                 playback_speed: float,
                 audio_urls:  List[str],
@@ -37,7 +37,7 @@ class Editor:
                 ):
         
         self.topic = topic
-        self.story_slug = topic.lower().replace(" ", "_")
+        self.story_slug = story_slug
         self.scenes = scenes
         self.audio_urls = audio_urls
         self.playback_speed = playback_speed

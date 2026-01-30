@@ -1,0 +1,171 @@
+{
+  "topic": "Beautiful friendship story",
+  "story_slug": "beautiful_friendship_story",
+  "test": false,
+  "story": {
+    "title": "The Oak Tree and the Unspoken Promise",
+    "text": "Leo and Maya had been inseparable since they were six, their friendship rooted as deeply as the ancient oak tree in their neighborhood park. Every Tuesday, without fail, they'd meet beneath its sprawling branches, sharing dreams, secrets, and the occasional bag of sour candy. Maya, a vibrant artist, often sketched the tree, envisioning her future at a prestigious art academy. Leo, ever the quiet observer, would simply listen, his presence a comforting anchor.\n\nOne autumn afternoon, Maya arrived, her usual sparkle dimmed. A thick envelope, clearly a rejection letter, lay crumpled in her hand. Her dream school had said no. She didn't cry, but her silence was heavier than any sob. Leo, seeing her pain, didn't offer empty platitudes. Instead, he pulled out his old, beat-up guitar and began strumming a ridiculously off-key rendition of their childhood anthem, a silly song about a grumpy squirrel. Maya initially just stared at the ground, but then a small, fragile smile touched her lips.\n\nHe then produced a small canvas and a set of paints, not for her, but for himself. With clumsy strokes, he attempted to paint the very oak tree above them, creating a hilariously distorted green blob. Maya watched, a soft chuckle escaping her. \"You're terrible,\" she whispered, but there was warmth in her voice. She picked up a brush, gently correcting a branch on his canvas, and soon they were painting together, laughing at his artistic failures and her own renewed spirit. It wasn't about the art school anymore; it was about the unwavering presence of a friend who knew exactly how to mend a broken dream, not with words, but with shared moments under their beloved tree.",
+    "tldr": "Childhood friends Leo and Maya reaffirm their bond after Maya's art school rejection, with Leo's quiet, supportive actions and a shared painting session helping her find joy and hope again under their favorite oak tree."
+  },
+  "image_prompts": [
+    {
+      "text": "Leo and Maya had been inseparable since they were six, their friendship rooted as deeply as the ancient oak tree in their neighborhood park.",
+      "img_prompt": "A cinematic wide shot of two young children, Leo and Maya, around six years old, sitting at the base of a massive, ancient oak tree in a sun-drenched neighborhood park. The tree's roots are visibly strong and deep, symbolizing their inseparable friendship. Golden hour lighting casts long shadows and a warm, nostalgic glow over the scene, emphasizing a sense of timeless connection and childhood innocence. The composition is balanced, with the majestic tree dominating the background."
+    },
+    {
+      "text": "Every Tuesday, without fail, they'd meet beneath its sprawling branches, sharing dreams, secrets, and the occasional bag of sour candy.",
+      "img_prompt": "A warm, intimate medium shot of teenage Leo and Maya beneath the sprawling branches of the ancient oak tree. Dappled sunlight filters through the autumn leaves, creating soft patterns on their faces. They are sharing a bag of sour candy, laughing softly, their expressions conveying deep trust and shared secrets. The focus is on their genuine interaction, with the tree's presence providing a comforting, familiar backdrop. Cinematic, naturalistic lighting."
+    },
+    {
+      "text": "Maya, a vibrant artist, often sketched the tree, envisioning her future at a prestigious art academy.",
+      "img_prompt": "A thoughtful, artistic close-up of Maya, now a young adult, intently sketching the ancient oak tree in her sketchbook. Her face shows concentration and passion, a hint of a dream in her eyes. Sunlight gently illuminates her hands and the page, highlighting the details of her drawing. The background is softly blurred, focusing on Maya and her artistic pursuit, with the majestic oak tree subtly visible behind her. Evocative, aspirational style."
+    },
+    {
+      "text": "Leo, ever the quiet observer, would simply listen, his presence a comforting anchor.",
+      "img_prompt": "A gentle, empathetic medium shot of Leo, a young adult, sitting slightly apart from Maya under the oak tree, observing her with a quiet, comforting presence. His expression is one of deep understanding and unwavering support, a silent anchor. The lighting is soft and warm, emphasizing his supportive role without drawing overt attention. The ancient oak tree looms protectively in the background, reinforcing the stability of their friendship. Cinematic, slightly muted tones."
+    },
+    {
+      "text": "One autumn afternoon, Maya arrived, her usual sparkle dimmed.",
+      "img_prompt": "A melancholic medium shot of Maya, a young adult, walking towards the ancient oak tree on an overcast autumn afternoon. Her shoulders are slightly slumped, and her usual vibrant sparkle is noticeably dimmed. Fallen autumn leaves carpet the ground, adding to the somber mood. The lighting is soft and diffused, reflecting her internal state of disappointment. The tree stands tall, but the atmosphere around it feels heavier than usual."
+    },
+    {
+      "text": "A thick envelope, clearly a rejection letter, lay crumpled in her hand.",
+      "img_prompt": "A tight, emotional close-up shot of Maya's hand, tightly clutching a thick, crumpled envelope. Her knuckles are white, and the paper shows the creases of distress. The background is softly blurred, hinting at the autumn leaves on the ground or the rough bark of the oak tree, keeping the focus entirely on the physical manifestation of her rejection. The lighting is slightly desaturated, emphasizing the gravity of the moment."
+    },
+    {
+      "text": "Her dream school had said no.",
+      "img_prompt": "A poignant cinematic portrait of Maya's face, a close-up, revealing profound disappointment and a vacant stare. Her eyes might be slightly red-rimmed, but no tears are actively falling, conveying a deeper, silent pain. The ancient oak tree is subtly visible in the soft-focus background, now a silent witness to her shattered dream. The lighting is soft but direct, highlighting the raw emotion on her face, with a slightly cool color palette."
+    },
+    {
+      "text": "She didn't cry, but her silence was heavier than any sob.",
+      "img_prompt": "Cinematic shot of Maya sitting beneath an ancient, sprawling oak tree, her shoulders slumped, gaze fixed on the crumpled rejection letter in her hand. Her face is devoid of tears, but her expression conveys profound, silent heartbreak. Soft, melancholic late afternoon light filters through the leaves, casting long shadows, emphasizing her isolation. Realistic, emotional portrait, deep focus."
+    },
+    {
+      "text": "Leo, seeing her pain, didn't offer empty platitudes.",
+      "img_prompt": "Close-up, cinematic shot of Leo's face, his eyes filled with deep empathy and concern as he looks at Maya. His brow is furrowed slightly, conveying a silent understanding of her pain. The background is softly blurred, hinting at the oak tree and Maya's slumped form. Warm, gentle lighting, realistic, emotional depth."
+    },
+    {
+      "text": "Instead, he pulled out his old, beat-up guitar and began strumming a ridiculously off-key rendition of their childhood anthem, a silly song about a grumpy squirrel.",
+      "img_prompt": "Medium shot, cinematic, of Leo sitting cross-legged under the oak tree, an old, worn, beat-up acoustic guitar resting on his lap. His fingers are clumsily strumming, a look of earnest concentration on his face as he attempts to play. Maya is visible in the background, still looking down, but perhaps a slight tilt of her head. Golden hour lighting, warm and comforting, realistic."
+    },
+    {
+      "text": "Maya initially just stared at the ground, but then a small, fragile smile touched her lips.",
+      "img_prompt": "Close-up, cinematic portrait of Maya's face. Her eyes, previously downcast, are now slightly lifted, and a delicate, almost imperceptible, fragile smile begins to form on her lips. The soft light catches the subtle shift in her expression, hinting at a glimmer of hope or amusement. Shallow depth of field, focusing solely on her face, emotional, realistic."
+    },
+    {
+      "text": "He then produced a small canvas and a set of paints, not for her, but for himself.",
+      "img_prompt": "Cinematic shot from Maya's perspective, looking at Leo's hands as he carefully pulls out a small, blank canvas and a compact set of vibrant oil paints from a worn bag. His hands are gentle, deliberate. The ancient oak tree's trunk is visible in the background. Natural, soft daylight, realistic, detailed."
+    },
+    {
+      "text": "With clumsy strokes, he attempted to paint the very oak tree above them, creating a hilariously distorted green blob.",
+      "img_prompt": "Medium shot, cinematic, of Leo intently focused on a small canvas, holding a paintbrush awkwardly. On the canvas, a comically distorted, bright green blob is clearly visible, a clumsy attempt at painting the majestic, detailed oak tree towering above them in the background. His tongue is slightly out in concentration. Bright, natural daylight, realistic, slightly humorous."
+    },
+    {
+      "text": "Maya watched, a soft chuckle escaping her.",
+      "img_prompt": "Cinematic shot of Maya, her head tilted slightly, a genuine, soft chuckle escaping her lips as she watches Leo's painting attempt. Her eyes are crinkled at the corners with amusement and warmth. The blurred figure of Leo and his 'masterpiece' are in the background. Warm, inviting light, realistic, emotional, close-up on her face."
+    },
+    {
+      "text": "\"You're terrible,\" she whispered, but there was warmth in her voice.",
+      "img_prompt": "Cinematic close-up shot. Maya (mid-20s, vibrant but recently sad) looking at a comically bad painting of an oak tree on a small canvas. A soft, genuine smile plays on her lips, her eyes crinkling with amusement and a hint of affection. Leo (mid-20s, quiet, earnest) is slightly out of focus in the background or partially visible, looking at her with a hopeful, sheepish expression. Dappled sunlight filters through the leaves of a large oak tree, casting warm, soft light on their faces. Shallow depth of field. Golden hour lighting. Film grain texture."
+    },
+    {
+      "text": "She picked up a brush, gently correcting a branch on his canvas, and soon they were painting together, laughing at his artistic failures and her own renewed spirit.",
+      "img_prompt": "Medium shot, slightly low angle. Maya and Leo sitting side-by-side under the sprawling branches of an ancient oak tree. Maya's hand, holding a paintbrush, is gently correcting a branch on the small canvas, which is propped up between them. Leo's hand might be near hers, or he's looking at the canvas with a wide, genuine smile. Both are laughing, their faces illuminated by warm, golden hour sunlight filtering through the leaves. A sense of shared joy and lightheartedness. Soft focus on the background, emphasizing their connection. Impressionistic brushstrokes visible on the canvas."
+    },
+    {
+      "text": "It wasn't about the art school anymore; it was about the unwavering presence of a friend who knew exactly how to mend a broken dream, not with words, but with shared moments under their beloved tree.",
+      "img_prompt": "Wide, cinematic shot. Maya and Leo sitting comfortably beneath the massive, ancient oak tree, its sprawling branches creating a natural canopy. They are looking up at the leaves or at each other with a serene, content expression. The small canvas with their shared painting rests gently beside them. The scene is bathed in the soft, warm glow of late afternoon sun, casting long shadows. A sense of peace, enduring friendship, and quiet understanding. The tree dominates the background, symbolizing their deep roots. Emotional depth, slightly melancholic but ultimately hopeful tone. High dynamic range."
+    }
+  ],
+  "prompts_to_read": [
+    {
+      "text": "Leo and Maya had been inseparable since they were six, their friendship rooted as deeply as the ancient oak tree in their neighborhood park."
+    },
+    {
+      "text": "Every Tuesday, without fail, they'd meet beneath its sprawling branches, sharing dreams, secrets, and the occasional bag of sour candy."
+    },
+    {
+      "text": "Maya, a vibrant artist, often sketched the tree, envisioning her future at a prestigious art academy."
+    },
+    {
+      "text": "Leo, ever the quiet observer, would simply listen, his presence a comforting anchor."
+    },
+    {
+      "text": "One autumn afternoon, Maya arrived, her usual sparkle dimmed."
+    },
+    {
+      "text": "A thick envelope, clearly a rejection letter, lay crumpled in her hand."
+    },
+    {
+      "text": "Her dream school had said no."
+    },
+    {
+      "text": "She didn't cry, but her silence was heavier than any sob."
+    },
+    {
+      "text": "Leo, seeing her pain, didn't offer empty platitudes."
+    },
+    {
+      "text": "Instead, he pulled out his old, beat-up guitar and began strumming a ridiculously off-key rendition of their childhood anthem, a silly song about a grumpy squirrel."
+    },
+    {
+      "text": "Maya initially just stared at the ground, but then a small, fragile smile touched her lips."
+    },
+    {
+      "text": "He then produced a small canvas and a set of paints, not for her, but for himself."
+    },
+    {
+      "text": "With clumsy strokes, he attempted to paint the very oak tree above them, creating a hilariously distorted green blob."
+    },
+    {
+      "text": "Maya watched, a soft chuckle escaping her."
+    },
+    {
+      "text": "\"You're terrible,\" she whispered, but there was warmth in her voice."
+    },
+    {
+      "text": "She picked up a brush, gently correcting a branch on his canvas, and soon they were painting together, laughing at his artistic failures and her own renewed spirit."
+    },
+    {
+      "text": "It wasn't about the art school anymore; it was about the unwavering presence of a friend who knew exactly how to mend a broken dream, not with words, but with shared moments under their beloved tree."
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/0a8c78b4/QLXDxFZ1IfrK_cgyOu0hv.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/FxqGMP6foZFQwWGJJ6_oy.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/bmYjhZZi0lOgbGLqbe17d.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/4FCcymQ3DM9L3_aLQvMkV.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/lux1dvwOfLF8UGptEaUML.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/n2RRr9Bm75i2H-DQJXTEF.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/RIjMvWvJ92HevN7aEzl5s.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/KbVrXBv3Re2s96SyismF6.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/T3cRoR2Xisjnpiw4y7rZG.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b4/npzBCFTXcx483Av2Nc6WA.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/3A2s3hIz4eChzePelH914.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/AHqdmH09xQm5QsH_VTPar.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/Xh1DMB4qSSxZF0Ui0G5fi.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/6gTdNLlIy0psDayIuNx7V.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/ay8PBwZd6rWCwvW-gub45.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/R731GU1NH8uLAoGWx5mIb.jpg",
+    "https://v3b.fal.media/files/b/0a8c78b5/97teMk_pinq3x0BpS5FO4.jpg"
+  ],
+  "audio_links": [
+    "https://v3b.fal.media/files/b/0a8c78bc/ofg0X4zzyAiDVI13_2YfV_tmpvpb8_onl.wav",
+    "https://v3b.fal.media/files/b/0a8c78bb/IPCIwouggDNQtBNQtuckF_tmpgtb350oy.wav",
+    "https://v3b.fal.media/files/b/0a8c78bb/8nsNbw3-opYhFFt2W0uFH_tmpo_o05in5.wav",
+    "https://v3b.fal.media/files/b/0a8c78bd/CgZys_suOpOKuAIk6rqXv_tmpo8vneg_x.wav",
+    "https://v3b.fal.media/files/b/0a8c78bc/JyTBOeFlLDR7pqFegMoHi_tmpo9rx9ndw.wav",
+    "https://v3b.fal.media/files/b/0a8c78bd/6Ap15DlnK7A1PwVeLOa_0_tmp2p510hky.wav",
+    "https://v3b.fal.media/files/b/0a8c78bd/ugjSNyZDsdMMDR2KP_wsT_tmp2qgijd8q.wav",
+    "https://v3b.fal.media/files/b/0a8c78be/hr2c3HPpFRmP8f03REz9e_tmp5swuycn8.wav",
+    "https://v3b.fal.media/files/b/0a8c78be/t4eS4_Ke6mouu24U3nBiX_tmplfmw4nbf.wav",
+    "https://v3b.fal.media/files/b/0a8c78be/HuQAnFzdkfv6h0mpjGExP_tmp6y_vxget.wav",
+    "https://v3b.fal.media/files/b/0a8c78bf/QeXjgR1y0oIdqDMxLs-cW_tmphqud2vno.wav",
+    "https://v3b.fal.media/files/b/0a8c78bf/aZGaf3qqvFOfqxW8EGgZK_tmpvrclewks.wav",
+    "https://v3b.fal.media/files/b/0a8c78c0/Kq2MU9oJSMHCh_PAKxdPd_tmpfxeinjac.wav",
+    "https://v3b.fal.media/files/b/0a8c78c0/FnlJWQrVb4OC_3yeDZimC_tmpax0jgtcy.wav",
+    "https://v3b.fal.media/files/b/0a8c78fa/ntHCWWMz0bXmHJBa7prRp_tmpek5agajy.wav",
+    "https://v3b.fal.media/files/b/0a8c78fa/_LdJlDnetb8yKxe6LHSP__tmp9mkh8db0.wav",
+    "https://v3b.fal.media/files/b/0a8c78fb/DnUDO1VUgudasxK2_LPmY_tmpoe2femev.wav"
+  ]
+}

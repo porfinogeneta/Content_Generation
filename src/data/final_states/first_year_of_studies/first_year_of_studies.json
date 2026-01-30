@@ -1,0 +1,171 @@
+{
+  "topic": "First year of studies",
+  "story_slug": "first_year_of_studies",
+  "test": false,
+  "story": {
+    "title": "The Freshman Gauntlet: From Overwhelmed to Overcomer",
+    "text": "Stepping onto campus for the first time, a wave of both exhilaration and sheer terror washed over me. The sheer scale of the university, the bustling crowds, the unfamiliar faces – it was a stark contrast to my quiet hometown. My first few weeks were a blur of lectures, awkward introductions, and late-night library sessions fueled by instant coffee. I felt like a tiny fish in an ocean, constantly questioning if I belonged. The real test came with the 'Introduction to Macroeconomics' group project. My team was a mix of brilliant but aloof individuals, and I struggled to contribute, feeling my ideas were inadequate. One evening, after a particularly frustrating meeting where my suggestions were brushed aside, I almost gave up. I called my mom, tears welling up, confessing I wasn't cut out for this. She simply said, 'You're stronger than you think, honey. Just keep trying.' Her words spurred me on. I spent hours researching, not just for the project, but to understand the concepts better. The next meeting, I came prepared, not just with ideas, but with data and a clear presentation. To my surprise, my teammates listened. We debated, refined, and eventually, created a presentation we were all proud of. Presenting it felt like a triumph, not just for the grade, but for my own confidence. That first year taught me resilience, the value of asking for help, and that even in the biggest oceans, a small fish can find its current.",
+    "tldr": "Freshman year started overwhelming and isolating, especially during a tough group project, but I pushed through, found my voice, and learned resilience."
+  },
+  "image_prompts": [
+    {
+      "text": "Stepping onto campus for the first time, a wave of both exhilaration and sheer terror washed over me.",
+      "img_prompt": "A wide, cinematic shot of a young student standing at the grand entrance of a bustling university campus for the first time. The student looks small against the imposing architecture, a mix of awe and apprehension on their face. Golden hour lighting casts long shadows, highlighting the contrast between the student's internal state and the vibrant, overwhelming environment. Shot on a wide-angle lens, slightly desaturated colors, film grain."
+    },
+    {
+      "text": "The sheer scale of the university, the bustling crowds, the unfamiliar faces – it was a stark contrast to my quiet hometown.",
+      "img_prompt": "A high-angle, sweeping shot looking down on a vast university quad teeming with hundreds of students. The protagonist is a tiny, isolated figure amidst the blurred, anonymous crowds, emphasizing the sheer scale and their feeling of being lost. The architecture is grand and imposing, creating a sense of overwhelming contrast to a quiet hometown. Cool, slightly desaturated tones, cinematic wide shot."
+    },
+    {
+      "text": "My first few weeks were a blur of lectures, awkward introductions, and late-night library sessions fueled by instant coffee.",
+      "img_prompt": "A dynamic, fast-paced montage sequence: a blurry shot of a lecture hall filled with students, a quick close-up of an awkward handshake between two students, and a tight shot of a steaming mug of instant coffee next to open textbooks on a desk in a dimly lit library, late at night. The lighting is stark and functional, reflecting the grind of early weeks. Gritty, realistic, slightly desaturated film aesthetic."
+    },
+    {
+      "text": "I felt like a tiny fish in an ocean, constantly questioning if I belonged.",
+      "img_prompt": "A poignant medium shot of the protagonist sitting alone at a large, modern table in a vast university common area or library. They are surrounded by blurred, busy students in the background, but their posture and gaze convey deep isolation and self-doubt, like a small fish in a big ocean. Soft, melancholic lighting, emphasizing solitude and introspection. Cinematic, slightly cool color palette."
+    },
+    {
+      "text": "The real test came with the 'Introduction to Macroeconomics' group project.",
+      "img_prompt": "A focused close-up shot on a laptop screen displaying the title 'Introduction to Macroeconomics' or a complex project brief. The protagonist's hand hovers uncertainly over the keyboard, their face partially visible in the screen's glow, showing a mix of apprehension and determination. The background is a subtly blurred university study space. Realistic, slightly tense lighting, cinematic depth of field."
+    },
+    {
+      "text": "My team was a mix of brilliant but aloof individuals, and I struggled to contribute, feeling my ideas were inadequate.",
+      "img_prompt": "A medium-wide shot of a university group project meeting. The protagonist is positioned slightly apart, looking hesitant or downcast, while three other 'brilliant but aloof' teammates are actively engaged in discussion, perhaps gesturing confidently or looking at notes, appearing dismissive of the protagonist's presence. Overhead fluorescent lighting creates a slightly sterile, uncomfortable atmosphere. Observational, realistic, cinematic framing."
+    },
+    {
+      "text": "One evening, after a particularly frustrating meeting where my suggestions were brushed aside, I almost gave up.",
+      "img_prompt": "An intimate, low-key shot of the protagonist sitting alone in a dimly lit dorm room or a quiet corner of the library, head in hands, looking utterly defeated. A discarded notebook or project materials lie nearby. The only light source is a warm, soft desk lamp, casting long, dramatic shadows that emphasize their despair. Emotional, cinematic close-up, rich in shadow and subtle color."
+    },
+    {
+      "text": "I called my mom, tears welling up, confessing I wasn't cut out for this.",
+      "img_prompt": "A close-up, cinematic shot of a young female university student, tears welling in her eyes, holding an old smartphone to her ear in a dimly lit, cluttered dorm room late at night. Her expression is vulnerable and defeated, illuminated by the phone's faint glow and a distant desk lamp. The scene conveys deep emotional distress and isolation. Realistic, melancholic lighting, shallow depth of field."
+    },
+    {
+      "text": "She simply said, 'You're stronger than you think, honey.",
+      "img_prompt": "A subtle, cinematic close-up on the student's face, a flicker of renewed hope and determination replacing her despair. Her eyes, though still slightly red, show a nascent resolve as if hearing comforting words. Soft, warm light from an unseen source gently illuminates her features, suggesting an internal shift. Realistic, intimate portrait."
+    },
+    {
+      "text": "Just keep trying.",
+      "img_prompt": "A medium shot of the student in her dorm room, now looking at her laptop screen or notes with a newfound, quiet resolve. The room is still dim, but a focused desk lamp casts a warm pool of light on her workspace, symbolizing a turning point. Her posture is slightly more upright, a subtle hint of purpose in her gaze. Cinematic, realistic, with a sense of emerging strength."
+    },
+    {
+      "text": "' Her words spurred me on.",
+      "img_prompt": "A dynamic, cinematic shot of the student intensely focused at her desk, surrounded by open textbooks, research papers, and a laptop screen glowing with complex data. Empty coffee cups are scattered nearby. Her expression is one of deep concentration and determination, fueled by a new drive. The scene is lit by the cool glow of the screen and a warm desk lamp, creating a focused, driven atmosphere. Realistic, late-night study scene."
+    },
+    {
+      "text": "I spent hours researching, not just for the project, but to understand the concepts better.",
+      "img_prompt": "An atmospheric, cinematic shot of the student in a vast university library, late at night. She is deeply engrossed in research, surrounded by stacks of books and a laptop. Soft, focused lighting highlights her face and the materials, while the rest of the library recedes into gentle shadows, emphasizing her solitary dedication. The scene evokes intellectual curiosity and tireless effort. Realistic, academic setting."
+    },
+    {
+      "text": "The next meeting, I came prepared, not just with ideas, but with data and a clear presentation.",
+      "img_prompt": "A confident, cinematic shot of the student walking into a modern university meeting room. She holds a tablet or presentation clicker, a subtle smile of determination and preparedness on her face. Her posture is upright, exuding a newfound self-assurance. The room is brightly and professionally lit, suggesting a fresh start and readiness. Realistic, professional environment."
+    },
+    {
+      "text": "To my surprise, my teammates listened.",
+      "img_prompt": "A medium, cinematic shot of the student presenting to her teammates in a university meeting room. Her teammates are leaning forward, engaged, listening intently, some nodding in agreement. The student looks slightly surprised but empowered by their attention and validation. The environment is professional and well-lit, capturing the moment of acceptance and collaborative success. Realistic, group interaction."
+    },
+    {
+      "text": "We debated, refined, and eventually, created a presentation we were all proud of.",
+      "img_prompt": "A diverse group of university students, including the protagonist, gathered around a large table in a dimly lit study room late at night. Laptops are open, papers are spread out, and a whiteboard in the background is covered with complex diagrams and notes. There's a palpable sense of focused collaboration and shared effort, with some students gesturing animatedly while others intently review documents. Warm, soft ambient light from desk lamps illuminates their faces, highlighting expressions of concentration and eventual satisfaction. Cinematic, realistic style, medium shot."
+    },
+    {
+      "text": "Presenting it felt like a triumph, not just for the grade, but for my own confidence.",
+      "img_prompt": "The protagonist stands confidently at the front of a large university lecture hall, presenting their project. A subtle, warm spotlight illuminates them, emphasizing their newfound self-assurance. They are making eye contact with the audience, a slight, proud smile on their face. The audience in the foreground and background is slightly blurred, suggesting their focus is entirely on the protagonist's triumph. The overall atmosphere is one of accomplishment and quiet victory. Cinematic, realistic style, medium-wide shot."
+    },
+    {
+      "text": "That first year taught me resilience, the value of asking for help, and that even in the biggest oceans, a small fish can find its current.",
+      "img_prompt": "A powerful, symbolic image of a small, determined fish swimming purposefully through a vast, deep blue ocean. The water is clear, with shafts of sunlight piercing through from the surface, creating a dramatic play of light and shadow. Larger, indistinct shapes of other marine life or distant structures hint at the 'biggest oceans,' but the small fish is clearly navigating its own path with resilience and direction. The scene evokes a sense of hope, discovery, and finding one's place. Cinematic, slightly ethereal yet realistic, wide shot."
+    }
+  ],
+  "prompts_to_read": [
+    {
+      "text": "Stepping onto campus for the first time, a wave of both exhilaration and sheer terror washed over me."
+    },
+    {
+      "text": "The sheer scale of the university, the bustling crowds, the unfamiliar faces – it was a stark contrast to my quiet hometown."
+    },
+    {
+      "text": "My first few weeks were a blur of lectures, awkward introductions, and late-night library sessions fueled by instant coffee."
+    },
+    {
+      "text": "I felt like a tiny fish in an ocean, constantly questioning if I belonged."
+    },
+    {
+      "text": "The real test came with the 'Introduction to Macroeconomics' group project."
+    },
+    {
+      "text": "My team was a mix of brilliant but aloof individuals, and I struggled to contribute, feeling my ideas were inadequate."
+    },
+    {
+      "text": "One evening, after a particularly frustrating meeting where my suggestions were brushed aside, I almost gave up."
+    },
+    {
+      "text": "I called my mom, tears welling up, confessing I wasn't cut out for this."
+    },
+    {
+      "text": "She simply said, 'You're stronger than you think, honey."
+    },
+    {
+      "text": "Just keep trying."
+    },
+    {
+      "text": "' Her words spurred me on."
+    },
+    {
+      "text": "I spent hours researching, not just for the project, but to understand the concepts better."
+    },
+    {
+      "text": "The next meeting, I came prepared, not just with ideas, but with data and a clear presentation."
+    },
+    {
+      "text": "To my surprise, my teammates listened."
+    },
+    {
+      "text": "We debated, refined, and eventually, created a presentation we were all proud of."
+    },
+    {
+      "text": "Presenting it felt like a triumph, not just for the grade, but for my own confidence."
+    },
+    {
+      "text": "That first year taught me resilience, the value of asking for help, and that even in the biggest oceans, a small fish can find its current."
+    }
+  ],
+  "photo_links": [
+    "https://v3b.fal.media/files/b/0a8c5e42/5TkTR7zOmDfxfhO2wU0Ei.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e42/ItvHJNN4kUU5wwpbL_C4g.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e42/Nv8ypSEH0noVB7_xmmmlH.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e42/IFHcv5_BYZvn__cxqmKtc.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e42/ohlHzOEV-WsWTi7oT9KsX.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/4VN8loe8hl0_z_SdSE7UN.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/KHIKrVLBNePQl2dP4JwF-.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/RNOHHhg8Uo9vw-VcJ3ec3.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/pfxerK_5R-5adXvw0hoR6.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/Ck_MYfptCZMmV5KsdmnnA.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/DiBTlQdEdjHKUg3vdhs47.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/RfknKt3tgUEo6a7BXZg3r.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/2eR32aGc6G7FlXLPmUGDp.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/mCikyZd4n_VDG4Mwye6-x.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e43/fN-YdV4puMS0iGTUsmPrz.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e44/ESXxQjIHd2FWSlTXbwNX-.jpg",
+    "https://v3b.fal.media/files/b/0a8c5e44/muaXCgmSKKJ8CtB9T7qgG.jpg"
+  ],
+  "audio_links": [
+    "https://v3b.fal.media/files/b/0a8c5e4c/ELZi_GQpbO5qLAubc0Y99_tmpreh1hlqn.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4c/sXz9dWmXC1gZGEk3CZjyY_tmpr9x0bl12.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4d/OGnLFoutrycF3IzwgG1om_tmpxanty3f2.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4b/icj0Bb6jQKGjIB290LJ_R_tmppp1msoeb.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4b/rcSkfqIgj2s53rB0iUg9-_tmpwv7g6896.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4d/ZB9nJOQAmrL1ihLH0ZuyG_tmpwgrqb7u_.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4e/0AGGTEcXbam9iOMk1ITw0_tmp2v6_07n9.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4e/MQ7OHMfVDyaPfu-UHdAoT_tmp02djlj96.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4f/P88cmwj5_7Q6YtPJg6C7C_tmp3l1c88r5.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4f/KDm_mgeMQPBZjPrYvBGWy_tmpydgucmr8.wav",
+    "https://v3b.fal.media/files/b/0a8c5e4f/RHTinNqQJpgoF4AMqMPLm_tmpeko3301s.wav",
+    "https://v3b.fal.media/files/b/0a8c5e50/lwQCHaYCrwM9o5b6R3ZyS_tmps7lah2hb.wav",
+    "https://v3b.fal.media/files/b/0a8c5e50/7PZAXdcClWpVq2oQxUQFS_tmpggqv3adh.wav",
+    "https://v3b.fal.media/files/b/0a8c5e50/fNfvwYOk-pYxuPDowtTeL_tmpl12grd1w.wav",
+    "https://v3b.fal.media/files/b/0a8c5e51/ZVBvWiXYyVWjZewcBRh48_tmpgi7dan8r.wav",
+    "https://v3b.fal.media/files/b/0a8c5e51/3xloscTYyWTUq_Aqs6Ghy_tmpzofgld4b.wav",
+    "https://v3b.fal.media/files/b/0a8c5e52/9gbLdfl46_6pUc-BogiAP_tmpjoxxewn5.wav"
+  ]
+}

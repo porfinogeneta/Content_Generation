@@ -17,7 +17,6 @@ click==8.3.0
 cloudpickle==3.1.1
 coloredlogs==15.0.1
 colorlog==6.9.0
--e git+https://github.com/porfinogeneta/Content_Generation.git@54b3e5f116d54950c8982ead15eb7a45ffaf48b4#egg=content_generation
 ctranslate2==4.6.1
 decorator==5.2.1
 diskcache==5.6.3

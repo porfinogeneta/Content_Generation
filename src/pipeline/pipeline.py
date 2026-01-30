@@ -8,6 +8,8 @@ from pathlib import Path
 import uuid
 from langgraph.checkpoint.memory import InMemorySaver
 import re
+# from IPython.display import Image, display
+
 
 from story.story import generate_story
 from schemas.schemas import ImagesPromptsOutput, GraphState
@@ -21,12 +23,12 @@ class Pipeline:
     ROOT_DATA = Path(__file__).resolve().parent.parent / "data" / "final_states" 
     MAX_WORKERS = 5
 
-    def __init__(self, topic: str, test: bool =False):
+    def __init__(self, topic: str, story_slug: str, test: bool =False):
         """
             Initializes workflow and it's configuration.
         """
         self.topic = topic
-        self.story_slug = self.topic.replace(" ", "_").lower()
+        self.story_slug = story_slug
         self.test = test
         self.workflow = self.__create_workflow()
         self.workflow_initial_state, self.config = self.__configure_workflow()
@@ -259,7 +261,7 @@ class Pipeline:
 
 if __name__ == "__main__":
 
-    pipeline = Pipeline(topic="My first year of studying", test=False)
+    pipeline = Pipeline(topic="My first year of studying", story_slug="hello", test=False)
     pipeline.workflow_compile_and_run()
 
 

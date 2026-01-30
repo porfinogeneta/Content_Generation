@@ -1,17 +1,6 @@
 from dotenv import load_dotenv
-from elevenlabs import ElevenLabs, VoiceSettings
-from elevenlabs.play import play
-import tempfile
-import os
-import time
-from pathlib import Path
-from pydub import AudioSegment
-import soundfile as sf
-import pyrubberband as pyrb
 from consts.test_consts import AUDIO_FILE
 import fal_client
-import requests
-from typing import List
 from schemas.schemas import PromptToReadOutput
 
 
@@ -60,13 +49,13 @@ def generate_text_to_read(text: str, test=False):
 
 
 def generate_audio(text_to_read: str,
-                    test=False) -> Path:
+                    test=False) -> str:
     
     """
         Generates audio in audio provider, returns link to the resource.
     """
     if test:
-        return AUDIO_FILE
+        return str(AUDIO_FILE)
     
     # concurrenlty generate audio for each image, then concat the file
     # FALAI CLIENT
