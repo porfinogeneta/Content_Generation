@@ -29,7 +29,7 @@ The system is built on a **LangGraph Pipeline** that orchestrates multiple AI mo
 ![alt text](image.png)
 
 ### End effect visualization
-![Video Demo](first_year_of_studies.mp4)
+![Video Demo](https://github.com/user-attachments/assets/82db9008-beed-444b-aea5-4778d4256554)
 
 ## 🤖 Technology Stack
 
