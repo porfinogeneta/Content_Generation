@@ -51,6 +51,7 @@ class Pipeline:
         # - or to introduce human in the loop
         # - at some point we have to implement rerun mechanism for the whole workflow, that omits filled in nodes
         #   such that we don't need to replicate the whole generation again
+
         checkpointer = InMemorySaver()
 
         app = self.workflow.compile(checkpointer=checkpointer)
@@ -187,7 +188,7 @@ class Pipeline:
         audio_chunks = [m.group().strip() for m in re.finditer(r'[^.?!]*[,.?!]', text)]
 
         # if there is too many sentences, we merge them
-        while len(audio_chunks) > 40:
+        while len(audio_chunks) > 10:
             h = []
             for i in range(0, len(audio_chunks) - 1, 2):
                 h.append(audio_chunks[i] + " " + audio_chunks[i+1])

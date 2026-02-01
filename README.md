@@ -66,13 +66,34 @@ Production cost breakdown per video:
 
 ### Option 1: Docker (Recommended)
 
+#### Set up `docker-compose.yml`
 ```bash
-# Build the image
-docker build -t content-gen-app .
+version: '3.8'
 
-# Run the container
-docker run content-gen-app
+services:
+  movie-generator:
+    build: .
+    environment:
+      - TOPIC=${TOPIC:-Beautiful friendship story}
+      - PLAYBACK_SPEED=${PLAYBACK_SPEED:-1.5}
+      - TEST_MODE=${TEST_MODE:-false}
+      - GEMINI_API_KEY={your key}
+      - FAL_KEY={your key}
+
+    volumes:
+      # Output videos appear here on your computer!
+      # bridge between local folder and outputted movies and serialized states
+      - ./output:/app/src/data/videos
+      - ./final_states:/app/src/data/final_states
 ```
+
+After having `docker-compose` set up simply run:
+
+```bash
+docker-compose up
+```
+
+After this in the root of the project in the `output` directory you should get generated .mp4 file, with the short form content you can utlize.
 
 ### Option 2: Local Environment
 

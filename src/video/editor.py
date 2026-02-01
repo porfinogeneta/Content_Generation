@@ -19,7 +19,7 @@ import shutil
 import time
 
 ROOT_SRC = Path(__file__).resolve().parent.parent
-INPUT_DATA_PATH = ROOT_SRC / "data" / "final_states"
+# # INPUT_DATA_PATH = ROOT_SRC / "data" / "final_states"
 DATA_PATH = ROOT_SRC / "data"
 
     
@@ -33,7 +33,7 @@ class Editor:
                 scenes: List[str],
                 playback_speed: float,
                 audio_urls:  List[str],
-                image_urls: List[str],
+                image_urls: List[str]
                 ):
         
         self.topic = topic
@@ -46,21 +46,21 @@ class Editor:
         self.zoom_factor = 0.30
         
         # output directories
-        self.audio_dir = DATA_PATH  / "videos" /  self.story_slug / "audio"
+        self.audio_dir = DATA_PATH / "videos" / self.story_slug / "audio"
         self.audio_dir.mkdir(parents=True, exist_ok=True)
 
-        self.imgs_dir = DATA_PATH  / "videos" /  self.story_slug / "images"
+        self.imgs_dir = DATA_PATH / "videos"  /  self.story_slug / "images"
         self.imgs_dir.mkdir(parents=True, exist_ok=True)
 
-        self.videos_dir = DATA_PATH / "videos" / self.story_slug
+        # directory for videos
+        self.videos_dir = DATA_PATH / "videos"  / self.story_slug
         self.videos_dir.mkdir(parents=True, exist_ok=True)
 
-        self.srt_path = DATA_PATH  / "videos" /  self.story_slug / Path(f"{self.story_slug}_subtitles")
+        self.srt_path = DATA_PATH / "videos" /  self.story_slug / Path(f"{self.story_slug}_subtitles")
         self.srt_path.mkdir(parents=True, exist_ok=True)
 
         # has to be predefined earlier
-        self.font_path =  DATA_PATH / "fonts" / Path("TikTokSans_28pt-Medium.ttf")
-        # self.font_path = "/Users/szymon/Documents/projekciki/Content_Generation/src/data/fonts/TikTokSans_28pt-Medium.ttf"
+        self.font_path =  DATA_PATH  / "fonts" / Path("TikTokSans_28pt-Medium.ttf")
         
     
     # fetches remotely stored data, returns path to local file
@@ -408,7 +408,7 @@ class Editor:
             return str(temp_processed)
             
 
-    def create_video(self):
+    def create_video(self) -> Path:
 
         
         # TODO: maybe rewriting it to async would be better, but too much work lol, 
@@ -517,6 +517,7 @@ class Editor:
 
         # clean-up the files
         self.__clean_folders()
+        return final_output_path
 
     def __clean_folders(self):
         folders = [self.audio_dir, self.imgs_dir, self.srt_path]

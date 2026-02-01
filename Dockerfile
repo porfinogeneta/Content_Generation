@@ -1,15 +1,15 @@
-# Use a slim Python image to keep size down (adjust version 3.10/3.11 as needed)
-FROM python:3.11
+# Use a slim Python image
+FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
 
-
-# Install system dependencies (ffmpeg)
-# We use a single RUN command to keep the image size small by cleaning up afterwards
+# Install system dependencies (ffmpeg + rubberband)
 RUN apt-get update && \
-    apt-get install -y ffmpeg && \
-    apt-get clean && \
+    apt-get install -y --no-install-recommends \
+    ffmpeg \
+    rubberband-cli \
+    && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first to leverage Docker cache
@@ -19,17 +19,25 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the source code
-# We copy the 'src' folder into '/app/src' to maintain import structure
 COPY src/ ./src/
 
-# Assuming your entry point is inside src/main.py
-# We create a user to avoid running as root (optional but security best practice)
-RUN useradd -m appuser
-
-RUN mkdir -p /app/src/data/final_states/short_reddit_post && \
+# Create necessary directories with proper permissions
+RUN useradd -m appuser && \
+    mkdir -p /app/src/data/final_states \
+             /app/src/data/output \
+             /app/src/data/cache && \
     chown -R appuser:appuser /app
 
+# Switch to non-root user
 USER appuser
+
+# Set Python to run in unbuffered mode for better logging
+ENV PYTHONUNBUFFERED=1
+
+# Default environment variables (can be overridden)
+ENV TOPIC="Beautiful friendship story" \
+    PLAYBACK_SPEED=1.5 \
+    TEST_MODE=false
 
 # Run the application
 CMD ["python", "src/main.py"]
