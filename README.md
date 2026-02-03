@@ -1,14 +1,14 @@
-# AI-Powered Short-Form Video Generator 🎬
+# AI-Powered Short-Form Video Generator
 
 An intelligent content creation pipeline that leverages Large Language Models and generative AI to automatically produce engaging short-form videos from text prompts.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project demonstrates the practical application of modern AI technologies to automate the entire video production workflow—from ideation to final output. By orchestrating multiple AI models through LangGraph, the system generates cohesive, publication-ready videos complete with synchronized visuals, narration, and subtitles.
 
 **Key Achievement:** Full video production at under $2 per video, showcasing efficient resource utilization and cost-effective AI integration.
 
-## ✨ Key Features
+## Key Features
 
 - **Automated Story Generation:** Creates engaging narratives tailored to any topic
 - **AI-Driven Visuals:** Generates contextually relevant images using state-of-the-art diffusion models
@@ -16,7 +16,7 @@ This project demonstrates the practical application of modern AI technologies to
 - **Intelligent Synchronization:** Automatically aligns audio, images, and subtitles with custom heuristics
 - **Production-Ready Output:** Generates polished short-form videos suitable for social media platforms
 
-## 🏗️ Architecture
+## Architecture
 
 The system is built on a **LangGraph Pipeline** that orchestrates multiple AI models in a sequential workflow:
 
@@ -30,7 +30,7 @@ The system is built on a **LangGraph Pipeline** that orchestrates multiple AI mo
 
 ### End effect visualization
 [![Watch the video](thumbnail.png)](https://github.com/user-attachments/assets/82db9008-beed-444b-aea5-4778d4256554)
-## 🤖 Technology Stack
+## Technology Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
@@ -40,7 +40,7 @@ The system is built on a **LangGraph Pipeline** that orchestrates multiple AI mo
 | **Subtitle Generation** | OpenAI Whisper (Small) | Speech recognition & text alignment |
 | **Orchestration** | LangGraph | Workflow management & state handling |
 
-## 💡 Technical Highlights
+## Technical Highlights
 
 ### Synchronization Challenge
 The core technical challenge was achieving precise synchronization between audio, visuals, and subtitles. This was solved through:
@@ -52,7 +52,7 @@ The core technical challenge was achieving precise synchronization between audio
 ### State Management
 All generated assets are serialized through a `GraphState` schema, ensuring type safety and enabling easy debugging and iteration.
 
-## 💰 Cost Efficiency
+## Cost Efficiency
 
 Production cost breakdown per video:
 - Image Generation (FAL AI): ~$0.80
@@ -62,7 +62,7 @@ Production cost breakdown per video:
 
 **Total: < $2.00 per video**
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Option 1: Docker (Recommended)
 
@@ -110,7 +110,7 @@ pip install -e .
 python3 src/main.py
 ```
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 - Multi-language support for global content creation
 - Real-time preview and iteration
@@ -118,7 +118,7 @@ python3 src/main.py
 - Cost Reduction for Images and Audio
 - Fully automated AI-Agent for content creation, utlizing social media API connections
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 This project demonstrates proficiency in:
 - **AI/ML Engineering:** Integration of multiple generative AI models
